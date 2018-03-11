@@ -15,16 +15,16 @@
             <!-- Add header content here -->
             <nav class="main-nav">
                 <ul>
-                    <li id="latest-articles-navpoint"><a href="#">Latest Articles</a></li>
-                    <li id="featured-articles-navpoint"><a href="#">Featured Articles</a></li>
-                    <li id="chingu-resources-navpoint"><a href="#">Chingu Resources</a></li>
+                    <li class="navpoint" id="latest-articles-navpoint" data-page-navpoint="latest-articles-page"><a href="#">Latest Articles</a></li>
+                    <li class="navpoint" id="featured-articles-navpoint" data-page-navpoint="featured-article-page"><a href="#">Featured Articles</a></li>
+                    <li class="navpoint" id="chingu-resources-navpoint" data-page-navpoint="chingu-resources-page"><a href="#">Chingu Resources</a></li>
                 </ul>
             </nav>
         </header>
         <div class="pages">
-            <div class="page latest-article-page"></div>
-            <div class="page featured-articles-page"></div>
-            <div class="page chingu-resources-page"></div>
+            <div class="page latest-articles-page selected">latest</div>
+            <div class="page featured-articles-page">featured</div>
+            <div class="page chingu-resources-page">resources</div>
         </div>
 
     </div>
