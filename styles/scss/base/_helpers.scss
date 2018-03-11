@@ -1,0 +1,15 @@
+// Object-fit
+.object-fit {
+    img {
+        object-fit: 100%;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// page_container
+.page_container {
+    max-width: $page_container_width;
+    width: 90%;
+    margin: auto;
+}

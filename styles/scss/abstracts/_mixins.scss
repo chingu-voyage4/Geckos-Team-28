@@ -1,0 +1,45 @@
+// Breakpoints using variables
+@mixin breakpoint($type) {
+    @if($type == mobile) {
+        @media screen and (max-width: $bp_mobile) {
+            @content;
+        }
+    }
+    @else if($type == mobilelandscape) {
+        @media screen and (max-width: $bp_mobilelandscape) {
+            @content;
+        }
+    }
+    @else if($type == tablet) {
+        @media screen and (max-width: $bp_tablet) {
+            @content;
+        }
+    }
+    @else if($type == tabletlandscape) {
+        @media screen and (max-width: $bp_tabletlandscape) {
+            @content;
+        }
+    }
+    @else if($type == laptop) {
+        @media screen and (max-width: $bp_laptop) {
+            @content;
+        }
+    }
+    @else if($type == desktop) {
+        @media screen and (max-width: $bp_desktop) {
+            @content;
+        }
+    }
+    @else {
+        @media screen and($type) {
+            @content;
+        }
+    }
+}
+
+// Breakpoint using custom size
+@mixin break($breakpoint) {
+    @media only screen and (max-width: $breakpoint + px) {
+        @content;
+    }
+}
