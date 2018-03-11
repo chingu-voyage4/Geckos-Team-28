@@ -8,13 +8,30 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>G28</title>
 </head>
+
 <body>
-    <div class="container">
-        <h2>Hello, this is Team Gecko-28's repository.</h2>
-        <p>Sit back and relax.. while we bring our project to life.</p>
+    <div class="app-container">
+        <header>
+            <!-- Add header content here -->
+            <nav class="main-nav">
+                <ul>
+                    <li id="latest-articles-navpoint"><a href="#">Latest Articles</a></li>
+                    <li id="featured-articles-navpoint"><a href="#">Featured Articles</a></li>
+                    <li id="chingu-resources-navpoint"><a href="#">Chingu Resources</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="pages">
+            <div class="page latest-article-page"></div>
+            <div class="page featured-articles-page"></div>
+            <div class="page chingu-resources-page"></div>
+        </div>
+
     </div>
-
-
+    <script src="./scripts/jquery-3.3.1.min.js"></script>
+    <script src="./scripts/page-scripts/latest-articles.js"></script>
+    <script src="./scripts/page-scripts/featured-articles.js"></script>
+    <script src="./scripts/page-scripts/resources-articles.js"></script>
     <script src="./scripts/main.js"></script>
 </body>
 </html>
