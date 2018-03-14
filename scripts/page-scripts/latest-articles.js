@@ -99,7 +99,7 @@ var storiesToSort = [];
     // gets an array of storyObjects - userData + story
     function RunAfterSort(array) {
         array.forEach(function(storyObject) {
-            console.log(storyObject);
+            console.log(storyObject.story.pubDate);
         });
     }
 
