@@ -322,9 +322,12 @@ template {
       display: block; }
 
 header {
-  height: 80px; }
+  height: 80px;
+  background-color: #394c5f; }
   header nav ul {
     display: flex;
+    margin: 0;
+    padding-top: 18px;
     justify-content: center;
     align-items: center; }
     header nav ul li {
@@ -333,8 +336,10 @@ header {
       header nav ul li a {
         text-decoration: none;
         padding: 10px 20px;
-        border: 1px solid grey;
-        color: black;
+        border-radius: 5px;
+        color: rgba(0, 0, 0, 0.64);
+        background-color: #CFD8DC;
+        font-family: "Roboto", sans-serif;
         transition: all ease .3s; }
         header nav ul li a:hover {
           background: rgba(0, 0, 0, 0.1); }

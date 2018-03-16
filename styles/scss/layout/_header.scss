@@ -4,6 +4,8 @@ header {
     nav {        
         ul {
             display: flex;
+            margin: 0;
+            padding-top: 18px;
             justify-content: center;
             align-items: center;
 
@@ -14,8 +16,10 @@ header {
                 a {
                     text-decoration: none;
                     padding: 10px 20px;
-                    border: 1px solid grey;
-                    color: black;
+                    border-radius: 5px;
+                    color: rgba(0, 0, 0, 0.64);
+                    background-color: $buttons-color;
+                    font-family: $secondary-font;
                     transition: all ease .3s;
 
                     &:hover {
