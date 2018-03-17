@@ -319,7 +319,7 @@ template {
     margin-top: 30px;
     width: 100%; }
     .pages .page.selected {
-      display: block; }
+      display: none; }
 
 header {
   height: 80px;
@@ -342,6 +342,7 @@ header {
         font-family: "Roboto", sans-serif;
         transition: all ease .3s; }
         header nav ul li a:hover {
-          background: rgba(0, 0, 0, 0.1); }
+          background: rgba(35, 52, 71, 0.5);
+          color: #CFD8DC; }
 
 /*# sourceMappingURL=main.css.map */
