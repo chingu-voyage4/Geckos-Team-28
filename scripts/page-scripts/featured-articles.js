@@ -2,10 +2,12 @@ var featuredArticles = [];
 function RunFeaturedArticles() {
 
 
-    
-    // Get data from JSON
+    // Only run if array is empty (iteration 0)
     if(featuredArticles.length == 0) {
+
+        // Get data from JSON
         $.getJSON("usersList.json", function(data) {
+
             // calculation variables
             var totalFeatured = data.featuredArticles.length;
             var totalArticlesTransfered = 0;
@@ -21,14 +23,16 @@ function RunFeaturedArticles() {
                 HandleFeaturedArticles();
             }
             
-            
         });
     }
 
     // Converts data to HTML
     function HandleFeaturedArticles() {
+        
+        // Generate HTML for every element in array
         $.each(featuredArticles, function(i, articleObject) {
-            console.log(articleObject);
+
+            // -- Start of build
             
             // build featured article container
             $('<div />', {
@@ -54,6 +58,8 @@ function RunFeaturedArticles() {
                 </div>\
             </div>\
             ');
+            
+            // --End of build
 
         });
     }
