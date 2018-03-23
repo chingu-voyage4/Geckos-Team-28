@@ -50,7 +50,7 @@ function RunFeaturedArticles() {
                     <h3 class="article-heading">' + articleObject.articleHeading + '</h3>\
                     <p class="article-summary">' + articleObject.articleSummary + '</p>\
                     <div class="article-footer">\
-                        <a href="' + articleObject.articleAuthorLink + '" target="_blank">' + articleObject.articleAuthorName + '</a>\
+                        <a class="article-author" href="' + articleObject.articleAuthorLink + '" target="_blank">' + articleObject.articleAuthorName + '</a>\
                     </div>\
                 </div>\
                 <div class="article-button">\
