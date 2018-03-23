@@ -1,70 +1,59 @@
 function RunFeaturedArticles() {
-    // run code here
-    console.log("Featured Articles JS running.");
 
-    // Get story from username + id
-    var storiesToGet = [
-        {
-            user: "tropicalchancer",
-            storyId: "chingu-weekly-vol-53-661b522ba6e7"
-        },
-        {
-            user: "tropicalchancer",
-            storyId: "chingu-weekly-vol-52-c953e42c3468"
-        },
-        {
-            user: "francesco.agnoletto",
-            storyId: "one-year-as-a-remote-developer-28e9dfca2e24"
+    var featuredArticles = [];
+
+    
+    // Get data from JSON
+    $.getJSON("usersList.json", function(data) {
+        // calculation variables
+        var totalFeatured = data.featuredArticles.length;
+        var totalArticlesTransfered = 0;
+
+        // Transfer articles from json to local array
+        $.each(data.featuredArticles, function(i, articleObject) {
+            featuredArticles.push(articleObject);
+            totalArticlesTransfered++;
+        });
+
+        // When all articles are in local array, run function to convert to HTML
+        if(totalArticlesTransfered == totalFeatured) {
+            HandleFeaturedArticles();
         }
-    ];
+        
+        
+    });
 
-    var totalRssCalls = storiesToGet.length;
-    var rssCalls = 0;
+    // Converts data to HTML
+    function HandleFeaturedArticles() {
+        $.each(featuredArticles, function(i, articleObject) {
+            console.log(articleObject);
+            
+            // build featured article container
+            $('<div />', {
+                id: 'featured-' + (i),
+                class: 'article article-featured'
+            }).appendTo('.featured-articles-page .container');
 
-    var featuredStories = [];
-
-    function GetFeaturedStory(user, storyId) {
-        var data = {
-            rss_url: 'https://medium.com/feed/@' + user // Feed URL
-        };
-        $.get('https://api.rss2json.com/v1/api.json', data, function (response) { // Get feed
-            if (response.status == 'ok') {
-
-                var user = response.feed;
-                var stories = response.items;
-
-                // Find specific story
-                $.each(stories, function(i, story) {
-                    // if found
-                    if(story.link.indexOf(storyId) >= 0) {
-                        var storyObj = {user: user, story: story}
-                        featuredStories.push(storyObj);
-                    }
-
-                });
-                
-                rssCalls++;
-
-            } else {
-                console.log(response.message);
-                rssCalls++;
-            }
-
-            if(rssCalls == totalRssCalls) {
-                Process();
-            }
+            // build featured article child elements
+            $("#featured-" + i).html('\
+            <div class="article-container">\
+                <div class="image-container">\
+                    <img src="' + articleObject.articleImageLink + '" alt="Featured Article Image">\
+                </div>\
+                <div class="text-container">\
+                    <h3 class="article-heading">' + articleObject.articleHeading + '</h3>\
+                    <p class="article-summary">' + articleObject.articleSummary + '</p>\
+                    <div class="article-footer">\
+                        <a href="' + articleObject.articleAuthorLink + '" target="_blank">' + articleObject.articleAuthorName + '</a>\
+                    </div>\
+                </div>\
+                <div class="article-button">\
+                    <a href="' + articleObject.articleLink + '" target="_blank">Go to article</a>\
+                </div>\
+            </div>\
+            ');
 
         });
-    };
-
-    function Process() {
-        $.each(featuredStories, function(i, story) {
-            console.log(story.story);
-            
-        })
     }
 
-    $.each(storiesToGet, function(i, storiesInfo) {
-        GetFeaturedStory(storiesInfo.user, storiesInfo.storyId);
-    });
 }
