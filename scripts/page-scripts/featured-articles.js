@@ -1,27 +1,29 @@
+var featuredArticles = [];
 function RunFeaturedArticles() {
 
-    var featuredArticles = [];
 
     
     // Get data from JSON
-    $.getJSON("usersList.json", function(data) {
-        // calculation variables
-        var totalFeatured = data.featuredArticles.length;
-        var totalArticlesTransfered = 0;
-
-        // Transfer articles from json to local array
-        $.each(data.featuredArticles, function(i, articleObject) {
-            featuredArticles.push(articleObject);
-            totalArticlesTransfered++;
+    if(featuredArticles.length == 0) {
+        $.getJSON("usersList.json", function(data) {
+            // calculation variables
+            var totalFeatured = data.featuredArticles.length;
+            var totalArticlesTransfered = 0;
+    
+            // Transfer articles from json to local array
+            $.each(data.featuredArticles, function(i, articleObject) {
+                featuredArticles.push(articleObject);
+                totalArticlesTransfered++;
+            });
+    
+            // When all articles are in local array, run function to convert to HTML
+            if(totalArticlesTransfered == totalFeatured) {
+                HandleFeaturedArticles();
+            }
+            
+            
         });
-
-        // When all articles are in local array, run function to convert to HTML
-        if(totalArticlesTransfered == totalFeatured) {
-            HandleFeaturedArticles();
-        }
-        
-        
-    });
+    }
 
     // Converts data to HTML
     function HandleFeaturedArticles() {
