@@ -313,13 +313,16 @@ template {
   left: 0;
   background: rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: calc(100% - 80px); }
+  min-height: calc(100% - 80px); }
   .pages .page {
     display: none;
     margin-top: 30px;
     width: 100%; }
     .pages .page.selected {
       display: block; }
+    .pages .page .container {
+      width: 90%;
+      margin: 0 auto; }
 
 header {
   height: 80px;
