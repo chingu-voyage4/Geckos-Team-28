@@ -1,21 +1,8 @@
+var usersLatestArticles = [];
 console.log("script ready. over.");
+// Get latest users (Used for latest-articles)
 
-// Initial click handlers
-
-
-// $("#latest-articles-navpoint").click(function() {
-//     $(".page").removeClass("selected");
-//     RunLatestArticles();
-// })
-
-// $("#featured-articles-navpoint").click(function() {
-//     $(".page").removeClass("selected");
-//     RunFeaturedArticles();
-// })
-
-// $("#chingu-resources-navpoint").click(function() {
-//     RunChinguResources();
-// })
+GetLatestUsersArray();
 
 $(".navpoint").click(function() {
     var clickedElement = $(this);
@@ -36,7 +23,5 @@ $(".navpoint").click(function() {
 
     } else if(page == "settings-page") {
         $(".settings-page").addClass("selected");
-        RunChinguResources();
-
     }
-})
+});
