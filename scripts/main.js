@@ -1,21 +1,14 @@
+var usersForLatestArticles = [];
+
+chrome.storage.sync.get(['latestUsersArray'], function(result) {
+    usersForLatestArticles = result.latestUsersArray;
+    GetLatestUsersArray();
+    
+})
+
 console.log("script ready. over.");
+// Get latest users (Used for latest-articles)
 
-// Initial click handlers
-
-
-// $("#latest-articles-navpoint").click(function() {
-//     $(".page").removeClass("selected");
-//     RunLatestArticles();
-// })
-
-// $("#featured-articles-navpoint").click(function() {
-//     $(".page").removeClass("selected");
-//     RunFeaturedArticles();
-// })
-
-// $("#chingu-resources-navpoint").click(function() {
-//     RunChinguResources();
-// })
 
 $(".navpoint").click(function() {
     var clickedElement = $(this);
@@ -34,5 +27,7 @@ $(".navpoint").click(function() {
         $(".chingu-resources-page").addClass("selected");
         RunChinguResources();
 
+    } else if(page == "settings-page") {
+        $(".settings-page").addClass("selected");
     }
-})
+});
