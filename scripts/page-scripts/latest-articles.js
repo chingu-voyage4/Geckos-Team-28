@@ -1,6 +1,6 @@
 function RunLatestArticles() {
 
-var users = [ "francesco.agnoletto", "P1xt", "tropicalchancer", "jdmedlock" ]; // pre-defined users
+var users = usersForLatestArticles
 
 var totalRssCalls = users.length;
 var rssCalls = 0;
@@ -8,11 +8,12 @@ var rssCalls = 0;
 var storiesToSort = [];
 
     // Get RSS feeds functions
-    function GetRssFeeds(user) {
-        var data = {
-            rss_url: 'https://medium.com/feed/@' + user // Feed URL
-        };
-        $.get('https://api.rss2json.com/v1/api.json', data, function (response) { // Get feed
+    function GetRssFeeds(userObject) {
+        if(userObject.enabled) {
+            var data = {
+                rss_url: 'https://medium.com/feed/@' + userObject.user // Feed URL
+            };
+            $.get('https://api.rss2json.com/v1/api.json', data, function (response) { // Get feed
             if (response.status == 'ok') {
 
                 var user = response.feed;
@@ -34,6 +35,9 @@ var storiesToSort = [];
             }
 
         });
+        } else {
+            rssCalls++;
+        }
     };
 
     var test = 0;
@@ -99,13 +103,13 @@ var storiesToSort = [];
     // gets an array of storyObjects - userData + story
     function RunAfterSort(array) {
         array.forEach(function(storyObject) {
-            console.log(storyObject.story.pubDate);
+            console.log(storyObject.story.title);
         });
     }
 
 
-    users.forEach(function(user) { // Get RSS Feeds from all users
-        GetRssFeeds(user);
+    users.forEach(function(userObject) { // Get RSS Feeds from all users
+        GetRssFeeds(userObject);
     });
     
     
