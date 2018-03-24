@@ -1,8 +1,14 @@
-var usersLatestArticles = [];
+var usersForLatestArticles = [];
+
+chrome.storage.sync.get(['latestUsersArray'], function(result) {
+    usersForLatestArticles = result.latestUsersArray;
+    GetLatestUsersArray();
+    
+})
+
 console.log("script ready. over.");
 // Get latest users (Used for latest-articles)
 
-GetLatestUsersArray();
 
 $(".navpoint").click(function() {
     var clickedElement = $(this);
