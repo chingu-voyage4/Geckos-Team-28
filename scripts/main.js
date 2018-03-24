@@ -34,5 +34,9 @@ $(".navpoint").click(function() {
         $(".chingu-resources-page").addClass("selected");
         RunChinguResources();
 
+    } else if(page == "settings-page") {
+        $(".settings-page").addClass("selected");
+        RunChinguResources();
+
     }
 })
