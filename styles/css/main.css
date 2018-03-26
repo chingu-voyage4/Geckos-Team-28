@@ -323,6 +323,36 @@ template {
     .pages .page .container {
       width: 90%;
       margin: 0 auto; }
+  .pages .article-container {
+    background-color: #394c5f;
+    height: 200px;
+    margin: 1rem;
+    padding: 1rem; }
+    .pages .article-container .image-container {
+      width: 30%;
+      float: left;
+      height: 180px; }
+      .pages .article-container .image-container img {
+        display: inline-block;
+        width: 90%;
+        height: 75%;
+        padding: 5%; }
+      .pages .article-container .image-container:before, .pages .article-container .image-container:after {
+        content: none;
+        display: table; }
+      .pages .article-container .image-container:after {
+        clear: both; }
+    .pages .article-container .text-container {
+      float: left;
+      width: 70%; }
+      .pages .article-container .text-container:before, .pages .article-container .text-container:after {
+        content: none;
+        display: table; }
+      .pages .article-container .text-container:after {
+        clear: both; }
+    .pages .article-container .article-button {
+      display: block;
+      float: right; }
 
 header {
   height: 80px;
@@ -338,11 +368,11 @@ header {
       list-style-type: none; }
       header nav ul li a {
         text-decoration: none;
-        padding: 10px 20px;
+        padding: 14px 20px;
         border-radius: 5px;
-        color: rgba(0, 0, 0, 0.64);
-        background-color: #CFD8DC;
+        color: #CFD8DC;
         font-family: "Roboto", sans-serif;
+        font-size: 1.3em;
         transition: all ease .3s; }
         header nav ul li a:hover {
           background: rgba(0, 0, 0, 0.1); }

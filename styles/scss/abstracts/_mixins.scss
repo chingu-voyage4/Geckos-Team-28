@@ -43,3 +43,14 @@
         @content;
     }
 }
+
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: none;
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

@@ -22,4 +22,36 @@
 
     }
 
+    .article-container {
+        background-color: $primary-color;
+        height: 200px;
+        margin: 1rem;
+        padding: 1rem;
+
+        .image-container {
+            width: 30%;
+            float: left;
+            height: 180px;
+            img {
+                display: inline-block;
+                width: 90%;
+                height: 75%;
+                padding: 5%;
+            }
+            @include clearfix;
+        }
+
+        .text-container {
+            float: left;
+            width: 70%;
+            @include clearfix;
+        } 
+
+        .article-button {
+            display: block;
+            float: right;
+        }
+        
+    }
+
 }

@@ -15,11 +15,11 @@ header {
 
                 a {
                     text-decoration: none;
-                    padding: 10px 20px;
+                    padding: 14px 20px;
                     border-radius: 5px;
-                    color: rgba(0, 0, 0, 0.64);
-                    background-color: $buttons-color;
+                    color: $buttons-color;
                     font-family: $secondary-font;
+                    font-size: 1.3em;
                     transition: all ease .3s;
 
                     &:hover {
