@@ -312,6 +312,7 @@ template {
   top: 80px;
   left: 0;
   background: rgba(0, 0, 0, 0.1);
+  background-color: #394c5f;
   width: 100%;
   min-height: calc(100% - 80px); }
   .pages .page {
@@ -326,8 +327,9 @@ template {
   .pages .article-container {
     background-color: #394c5f;
     height: 200px;
-    margin: 1rem;
-    padding: 1rem; }
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    box-shadow: 0px 5px 13px 8px rgba(255, 255, 255, 0.4); }
     .pages .article-container .image-container {
       width: 30%;
       float: left;
@@ -335,7 +337,7 @@ template {
       .pages .article-container .image-container img {
         display: inline-block;
         width: 90%;
-        height: 75%;
+        height: 80%;
         padding: 5%; }
       .pages .article-container .image-container:before, .pages .article-container .image-container:after {
         content: none;
@@ -344,15 +346,44 @@ template {
         clear: both; }
     .pages .article-container .text-container {
       float: left;
-      width: 70%; }
+      width: 70%;
+      height: 80%;
+      padding: 1% 0;
+      color: #CFD8DC; }
       .pages .article-container .text-container:before, .pages .article-container .text-container:after {
         content: none;
         display: table; }
       .pages .article-container .text-container:after {
         clear: both; }
+      .pages .article-container .text-container h3 {
+        font-size: 1.1rem;
+        margin: 0; }
+      .pages .article-container .text-container p {
+        font-size: 1rem; }
+      .pages .article-container .text-container a {
+        text-decoration: none;
+        color: #CFD8DC;
+        font-style: italic; }
+    .pages .article-container .article-footer {
+      width: 20%;
+      height: 2rem;
+      float: left;
+      padding: 15px 0; }
     .pages .article-container .article-button {
       display: block;
       float: right; }
+      .pages .article-container .article-button a {
+        padding: 5px;
+        text-decoration: none;
+        color: #394c5f;
+        padding: 10px;
+        background-color: #CFD8DC;
+        border-radius: 48rem;
+        transition: all ease .3s; }
+      .pages .article-container .article-button a:hover {
+        background: rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.4);
+        color: #CFD8DC; }
 
 header {
   height: 80px;
@@ -375,6 +406,7 @@ header {
         font-size: 1.3em;
         transition: all ease .3s; }
         header nav ul li a:hover {
-          background: rgba(0, 0, 0, 0.1); }
+          background: rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.4); }
 
 /*# sourceMappingURL=main.css.map */
