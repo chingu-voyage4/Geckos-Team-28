@@ -337,8 +337,9 @@ template {
       .pages .article-container .image-container img {
         display: inline-block;
         width: 90%;
-        height: 80%;
-        padding: 5%; }
+        height: 100%;
+        padding: 5%;
+        object-fit: cover; }
       .pages .article-container .image-container:before, .pages .article-container .image-container:after {
         content: none;
         display: table; }
