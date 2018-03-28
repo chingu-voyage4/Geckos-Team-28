@@ -57,13 +57,13 @@ function GetLatestUsersArray() { // LATEST ARTICLES USERS TOGGLE
         
         $.each(data, function(i, userObject) {
             // -- Start of build
-            console.log(userObject);
-            
+
+            var toggled = userObject.enabled === true ? 'enabled' : 'disabled';
             
             // build user toggle container
             $('<li />', {
                 id: 'toggle-latest-user-' + (i),
-                class: 'toggle-user enabled',
+                class: 'toggle-user ' + toggled
             }).appendTo('.settings-page .container .disable-latest-articles-users ul');
 
             // build user toggle child elements
@@ -73,23 +73,35 @@ function GetLatestUsersArray() { // LATEST ARTICLES USERS TOGGLE
             
             // --End of build
         });
-    };
 
     // enable / disable user
     // format required for appended elements
     $(document).on('click', '.toggle-user-name', function() {
 
         var  dataAttr = $(this).attr("data-user-toggle");
+        var newToggle = "";
 
         // Switch between enabled / disabled
         var userObject = usersForLatestArticles[dataAttr];
-        userObject.enabled == true ? userObject.enabled = false : userObject.enabled = true;
+        if(userObject.enabled) {
+            userObject.enabled = false;
+            newToggle = 'disabled';
+        }
+        else {
+            userObject.enabled = true;
+            newToggle = 'enabled';
+        }
+
+        $(this).closest("li").removeClass("enabled disabled");
+        $(this).closest("li").addClass(newToggle);
+
 
         // Save array with new toggle
         chrome.storage.sync.set({latestUsersArray: usersForLatestArticles});
 
 
     });
+    };
 
 
 };

@@ -8,9 +8,6 @@ chrome.storage.sync.get(['latestUsersArray'], function(result) {
     
 })
 
-console.log("script ready. over.");
-// Get latest users (Used for latest-articles)
-
 
 $(".navpoint").click(function() {
     var clickedElement = $(this);
