@@ -1,7 +1,9 @@
 var usersForLatestArticles = [];
 
 chrome.storage.sync.get(['latestUsersArray'], function(result) {
-    usersForLatestArticles = result.latestUsersArray;
+    if(result.latestUsersArray != undefined) {
+        usersForLatestArticles = result.latestUsersArray;
+    }
     GetLatestUsersArray();
     
 })
