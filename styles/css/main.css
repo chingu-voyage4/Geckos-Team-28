@@ -403,6 +403,8 @@ template {
         list-style: none;
         text-align: center;
         border: 1px solid #CFD8DC; }
+        .pages .settings-page .disable-latest-articles-users ul li:hover {
+          cursor: pointer; }
         .pages .settings-page .disable-latest-articles-users ul li p {
           padding: 10px 0;
           margin: 0;
