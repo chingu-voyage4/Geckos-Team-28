@@ -385,6 +385,33 @@ template {
         background: rgba(0, 0, 0, 0.1);
         box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.4);
         color: #CFD8DC; }
+  .pages .settings-page {
+    width: 75%;
+    margin: auto; }
+    .pages .settings-page .page-title {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #CFD8DC; }
+    .pages .settings-page .disable-latest-articles-users ul {
+      display: flex;
+      flex-direction: row;
+      padding: 0; }
+      .pages .settings-page .disable-latest-articles-users ul li {
+        border-radius: 48rem;
+        width: 22.75%;
+        margin: 1%;
+        list-style: none;
+        text-align: center;
+        border: 1px solid #CFD8DC; }
+        .pages .settings-page .disable-latest-articles-users ul li p {
+          padding: 10px 0;
+          margin: 0;
+          font-size: 1rem;
+          color: #CFD8DC; }
+    .pages .settings-page .disable-latest-articles-users .enabled {
+      background-color: #CFD8DC; }
+      .pages .settings-page .disable-latest-articles-users .enabled p {
+        color: #394c5f; }
 
 header {
   height: 80px;
