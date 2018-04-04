@@ -19,5 +19,34 @@
                   "articleSummary": "Below is not only an awesome collection of projects, but even more than that it is an example of what is possible when self-directed learners from across the planet come together to build, help and learn together.",
                   "articleDate": "Feb 23"
             }
+      ],
+      "chinguResourcesArticles": [
+            {
+                  "articleImageLink": "",
+                  "articleHeading": "How to not f- up your local files with Git part 1",
+                  "articleLink": "https://medium.com/@francesco.agnoletto/how-to-not-f-up-your-local-files-with-git-part-1-e0756c88fd3c",
+                  "articleAuthorName": "Francesco Agnoletto",
+                  "articleAuthorLink": "https://medium.com/@francesco.agnoletto",
+                  "articleSummary": "Git is an essential tool for every developer, it keeps your code history in check and helps understanding what was done yesterday without freaking out. Working with a team requires a bit more than “git add” and “git commit” so let’s start exploring the beautiful world of Git.",
+                  "articleDate": "May 29"
+            },
+            {
+                  "articleImageLink": "",
+                  "articleHeading": "How to not f- up your local files with Git part 2",
+                  "articleLink": "https://medium.com/@francesco.agnoletto/how-to-not-f-up-your-local-files-with-git-part-2-fc4e243be02a",
+                  "articleAuthorName": "Francesco Agnoletto",
+                  "articleAuthorLink": "https://medium.com/@francesco.agnoletto",
+                  "articleSummary": "This article is a continuation of part 1, while you can learn and enjoy this one without reading the first, I recommend you to take a look back on the etiquette of branches and workflow as I’ll use the same concepts from the first one.",
+                  "articleDate": "Jun 11"
+            },
+            {
+                  "articleImageLink": "https://cdn-images-1.medium.com/fit/t/800/240/1*h3OwmGMJaRWTZ-6Lea0OlQ.gif",
+                  "articleHeading": "How to not f- up your local files with Git part 3",
+                  "articleLink": "https://medium.com/chingu/how-to-not-f-up-your-local-files-with-git-part-3-bf03b27b6e64",
+                  "articleAuthorName": "Francesco Agnoletto",
+                  "articleAuthorLink": "https://medium.com/@francesco.agnoletto",
+                  "articleSummary": "Git is an essential tool for every developer, it keeps your code history in check and helps understanding what was done yesterday without freaking out. Working with a team requires a bit more than “git add” and “git commit” so let’s start exploring the beautiful world of Git.",
+                  "articleDate": "Aug 27"
+            }
       ]
 }
