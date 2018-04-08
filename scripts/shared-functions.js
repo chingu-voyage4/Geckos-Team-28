@@ -3,6 +3,9 @@ function BuildHtmlArticles(inputArray, idName, className, appendTo) {
     // Generate HTML for every element in array
     $.each(inputArray, function(i, articleObject) {
 
+        // If image doesn't exist, add placeholder
+        var imageLink = articleObject.articleImageLink !== "" ? articleObject.articleImageLink : "../img/no-img-placeholder.png";
+        console.log('imageLink: ', imageLink);
 
         // -- Start of build
         
@@ -16,7 +19,7 @@ function BuildHtmlArticles(inputArray, idName, className, appendTo) {
         $('#' + idName + '-' + i).html('\
         <div class="article-container">\
             <div class="image-container">\
-                <img src="' + articleObject.articleImageLink + '" alt="Featured Article Image">\
+                <img src="' + imageLink + '" alt="Featured Article Image">\
             </div>\
             <div class="text-container">\
                 <h3 class="article-heading">' + articleObject.articleHeading + '</h3>\
