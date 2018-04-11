@@ -17,8 +17,6 @@ function GetLatestUsersArray() { // LATEST ARTICLES USERS TOGGLE
 
         // if not equal, add missing users
         if(tempUserArray.length !== usersForLatestArticles.length) {
-            console.log("Not equal");
-            
 
             // Security check to check for duplicate users
             RemoveDuplicatedUsers()
@@ -51,6 +49,7 @@ function GetLatestUsersArray() { // LATEST ARTICLES USERS TOGGLE
         }
         
     });
+    // End of JSON call
 
     // Add settings for toggling users
     function addHtmlOptions(data) {
@@ -74,36 +73,90 @@ function GetLatestUsersArray() { // LATEST ARTICLES USERS TOGGLE
             // --End of build
         });
 
-    // enable / disable user
-    // format required for appended elements
-    $(document).on('click', '.toggle-user-name', function() {
+        // enable / disable user
+        $(document).on('click', '.toggle-user-name', function() {
 
-        var  dataAttr = $(this).attr("data-user-toggle");
-        var newToggle = "";
+            var  dataAttr = $(this).attr("data-user-toggle");
+            var newToggle = "";
 
-        // Switch between enabled / disabled
-        var userObject = usersForLatestArticles[dataAttr];
-        if(userObject.enabled) {
-            userObject.enabled = false;
-            newToggle = 'disabled';
-        }
-        else {
-            userObject.enabled = true;
-            newToggle = 'enabled';
-        }
+            // Switch between enabled / disabled
+            var userObject = usersForLatestArticles[dataAttr];
+            if(userObject.enabled) {
+                userObject.enabled = false;
+                newToggle = 'disabled';
+            }
+            else {
+                userObject.enabled = true;
+                newToggle = 'enabled';
+            }
 
-        $(this).closest("li").removeClass("enabled disabled");
-        $(this).closest("li").addClass(newToggle);
-
-
-        // Save array with new toggle
-        chrome.storage.sync.set({latestUsersArray: usersForLatestArticles});
+            $(this).closest("li").removeClass("enabled disabled");
+            $(this).closest("li").addClass(newToggle);
 
 
-    });
+            // Save array with new toggle
+            chrome.storage.sync.set({latestUsersArray: usersForLatestArticles});
+
+
+        });
     };
 
-
 };
-
 // END OF LATEST ARTICLES USERS TOGGLE
+
+
+// CHECK FOR UPDATES FUNCTIONS
+// Check if there's new users
+
+function CheckUpdatesUsers() {
+    // get JSON data
+    $.getJSON("usersList.json", function(data) {
+        var tempUserArray = [];
+
+        // Calc variables
+        var totalLatest = 0;
+        var totalLatestTotal = data.usersLatestArticles.length;
+            
+        // Transfer articles from json to local array
+        $.each(data.usersLatestArticles, function(i, user) {
+            userObject = { 'enabled': true, 'user': user }
+            tempUserArray.push(userObject);
+            totalLatest++;
+        });
+
+        // if not equal, add missing users
+        if(tempUserArray.length !== usersForLatestArticles.length) {
+
+            // Security check to check for duplicate users
+            RemoveDuplicatedUsers()
+
+            // Extend the array - will add 2nd array to 1st array, except duplicates
+            $.extend(true, usersForLatestArticles, tempUserArray)
+
+            // Save new array in chrome storage
+            chrome.storage.sync.set({latestUsersArray: usersForLatestArticles});
+
+        };
+
+        // function to remove duplicated users
+        function RemoveDuplicatedUsers() {
+            // remove duplicates first
+            $.each(usersForLatestArticles, function(i, user) {
+                if(usersForLatestArticles.length-1 > i) {
+                    if(user.user === usersForLatestArticles[i+1].user) {
+
+                        // If duplicated user, remove..
+                        usersForLatestArticles.splice(i, 1);
+                    }
+                }
+            })
+        };
+
+        // When all articles are in local array, run function to convert to HTML
+        if(totalLatestTotal == totalLatest) {
+            addHtmlOptions(usersForLatestArticles);
+        }
+        
+    });
+    // End of JSON call
+}
