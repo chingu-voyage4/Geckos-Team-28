@@ -1,0 +1,46 @@
+
+.settings-page {
+    width: 75%;
+    margin: auto;
+
+    .page-title {
+        text-align: center;
+        font-size: 1.3rem;
+        color: $text-color;
+    }
+
+    .disable-latest-articles-users {
+        ul {
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+
+            li {
+                border-radius: 48rem;                    
+                width: (100% - 1%)/4 - 2%;
+                margin: 1%;
+                list-style: none;
+                text-align: center;
+                border: 1px solid $text-color;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                p {
+                    padding: 10px 0;
+                    margin: 0;
+                    font-size: 1rem;
+                    color: $text-color;                        
+                }
+            }
+        }
+
+        .enabled {
+            background-color: $text-color;
+            p {
+                color: $primary-color;
+            }
+        }
+    }
+}
