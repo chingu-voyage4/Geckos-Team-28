@@ -1,55 +1,5 @@
 function GetLatestUsersArray() { // LATEST ARTICLES USERS TOGGLE
-
-    // get JSON data
-    $.getJSON("usersList.json", function(data) {
-        var tempUserArray = [];
-
-        // Calc variables
-        var totalLatest = 0;
-        var totalLatestTotal = data.usersLatestArticles.length;
-            
-        // Transfer articles from json to local array
-        $.each(data.usersLatestArticles, function(i, user) {
-            userObject = { 'enabled': true, 'user': user }
-            tempUserArray.push(userObject);
-            totalLatest++;
-        });
-
-        // if not equal, add missing users
-        if(tempUserArray.length !== usersForLatestArticles.length) {
-
-            // Security check to check for duplicate users
-            RemoveDuplicatedUsers()
-
-            // Extend the array - will add 2nd array to 1st array, except duplicates
-            $.extend(true, usersForLatestArticles, tempUserArray)
-
-            // Save new array in chrome storage
-            chrome.storage.sync.set({latestUsersArray: usersForLatestArticles});
-
-        };
-
-        // function to remove duplicated users
-        function RemoveDuplicatedUsers() {
-            // remove duplicates first
-            $.each(usersForLatestArticles, function(i, user) {
-                if(usersForLatestArticles.length-1 > i) {
-                    if(user.user === usersForLatestArticles[i+1].user) {
-
-                        // If duplicated user, remove..
-                        usersForLatestArticles.splice(i, 1);
-                    }
-                }
-            })
-        };
-
-        // When all articles are in local array, run function to convert to HTML
-        if(totalLatestTotal == totalLatest) {
-            addHtmlOptions(usersForLatestArticles);
-        }
-        
-    });
-    // End of JSON call
+    addHtmlOptions(usersForLatestArticles);
 
     // Add settings for toggling users
     function addHtmlOptions(data) {
@@ -73,7 +23,7 @@ function GetLatestUsersArray() { // LATEST ARTICLES USERS TOGGLE
             // --End of build
         });
 
-        // enable / disable user
+        // enable / disable user on click
         $(document).on('click', '.toggle-user-name', function() {
 
             var  dataAttr = $(this).attr("data-user-toggle");
@@ -96,8 +46,6 @@ function GetLatestUsersArray() { // LATEST ARTICLES USERS TOGGLE
 
             // Save array with new toggle
             chrome.storage.sync.set({latestUsersArray: usersForLatestArticles});
-
-
         });
     };
 
@@ -108,53 +56,60 @@ function GetLatestUsersArray() { // LATEST ARTICLES USERS TOGGLE
 // CHECK FOR UPDATES FUNCTIONS
 // Check if there's new users
 
-function CheckUpdatesUsers() {
+function CheckForUpdatesUsers() {
+    /**
+     * This script check for  updated users, for the latest-users toggle in the settings-page.
+     * The script will compare a new array of users with the existing array.
+     * If the arrays are different, the old array will be updated
+     * 
+     * Function description:
+     * 1: Make a new user array from RSS Feed
+     * 2: Compare length of arrays to see if new users are added / removed
+     *  3: Compare individual array items to see if users have been replaced
+     * 4: Run script to add HTML
+     */
+
+     console.log("Runnign comparison");
+     
     // get JSON data
     $.getJSON("usersList.json", function(data) {
         var tempUserArray = [];
 
-        // Calc variables
-        var totalLatest = 0;
-        var totalLatestTotal = data.usersLatestArticles.length;
+        // Calculation variables
+        var currentUsersCount = 0;
+        var totalUsersCount = data.usersLatestArticles.length;
             
-        // Transfer articles from json to local array
+        // 1: Transfer articles from json to local array
         $.each(data.usersLatestArticles, function(i, user) {
             userObject = { 'enabled': true, 'user': user }
             tempUserArray.push(userObject);
-            totalLatest++;
+            currentUsersCount++;
         });
 
-        // if not equal, add missing users
+        // 2: if not equal, add missing users
         if(tempUserArray.length !== usersForLatestArticles.length) {
 
-            // Security check to check for duplicate users
-            RemoveDuplicatedUsers()
-
             // Extend the array - will add 2nd array to 1st array, except duplicates
-            $.extend(true, usersForLatestArticles, tempUserArray)
+            usersForLatestArticles = tempUserArray;
 
             // Save new array in chrome storage
             chrome.storage.sync.set({latestUsersArray: usersForLatestArticles});
-
-        };
-
-        // function to remove duplicated users
-        function RemoveDuplicatedUsers() {
-            // remove duplicates first
+        } else {
+            // 3: Compare individual user objects
             $.each(usersForLatestArticles, function(i, user) {
-                if(usersForLatestArticles.length-1 > i) {
-                    if(user.user === usersForLatestArticles[i+1].user) {
-
-                        // If duplicated user, remove..
-                        usersForLatestArticles.splice(i, 1);
-                    }
+                if(user.user !== tempUserArray[i].user) {
+                    
+                    usersForLatestArticles[i] = tempUserArray[i];
                 }
-            })
-        };
+            });
 
-        // When all articles are in local array, run function to convert to HTML
-        if(totalLatestTotal == totalLatest) {
-            addHtmlOptions(usersForLatestArticles);
+            // Save new array in chrome storage
+            chrome.storage.sync.set({latestUsersArray: usersForLatestArticles});
+        }
+
+        // 4: When update function is done, run main function..
+        if(totalUsersCount == currentUsersCount) {
+            GetLatestUsersArray();
         }
         
     });
