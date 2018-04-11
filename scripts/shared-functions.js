@@ -5,7 +5,6 @@ function BuildHtmlArticles(inputArray, idName, className, appendTo) {
 
         // If image doesn't exist, add placeholder
         var imageLink = articleObject.articleImageLink !== "" ? articleObject.articleImageLink : "../img/no-img-placeholder.png";
-        console.log('imageLink: ', imageLink);
 
         // -- Start of build
         
