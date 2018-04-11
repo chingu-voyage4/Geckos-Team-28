@@ -1,9 +1,17 @@
+var storiesToSort = [];
 function RunLatestArticles() {
 
 var totalRssCalls = usersForLatestArticles.length;
 var rssCalls = 0;
 
-var storiesToSort = [];
+
+    if(storiesToSort.length == 0) {
+        $.each(usersForLatestArticles, function(i, userObject) {
+            console.log(userObject);
+            
+            GetRssFeeds(userObject);
+        });
+    }
 
     // Get single RSS feed based on username
     function GetRssFeeds(userObject) {
@@ -110,10 +118,5 @@ var storiesToSort = [];
         // Run function to convert array to HTML
         BuildHtmlArticles(sortedArray, 'latest', 'article article-latest', '.latest-articles-page .container');
     }
-
-
-    $.each(usersForLatestArticles, function(i, userObject) {
-        GetRssFeeds(userObject);
-    })
 
 }
