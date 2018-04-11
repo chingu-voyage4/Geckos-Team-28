@@ -1,4 +1,6 @@
 function BuildHtmlArticles(inputArray, idName, className, appendTo) {
+
+    $(appendTo).html("");
         
     // Generate HTML for every element in array
     $.each(inputArray, function(i, articleObject) {
