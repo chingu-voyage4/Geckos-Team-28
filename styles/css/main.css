@@ -324,96 +324,6 @@ template {
     .pages .page .container {
       width: 90%;
       margin: 0 auto; }
-  .pages .article-container {
-    background-color: #394c5f;
-    height: 200px;
-    margin: 2.5rem 0;
-    padding: 1.5rem;
-    box-shadow: 0px 5px 13px 8px rgba(255, 255, 255, 0.4); }
-    .pages .article-container .image-container {
-      width: 30%;
-      float: left;
-      height: 180px; }
-      .pages .article-container .image-container img {
-        display: inline-block;
-        width: 90%;
-        height: 100%;
-        padding: 5%;
-        object-fit: cover; }
-      .pages .article-container .image-container:before, .pages .article-container .image-container:after {
-        content: none;
-        display: table; }
-      .pages .article-container .image-container:after {
-        clear: both; }
-    .pages .article-container .text-container {
-      float: left;
-      width: 70%;
-      height: 80%;
-      padding: 1% 0;
-      color: #CFD8DC; }
-      .pages .article-container .text-container:before, .pages .article-container .text-container:after {
-        content: none;
-        display: table; }
-      .pages .article-container .text-container:after {
-        clear: both; }
-      .pages .article-container .text-container h3 {
-        font-size: 1.1rem;
-        margin: 0; }
-      .pages .article-container .text-container p {
-        font-size: 1rem; }
-      .pages .article-container .text-container a {
-        text-decoration: none;
-        color: #CFD8DC;
-        font-style: italic; }
-    .pages .article-container .article-footer {
-      width: 20%;
-      height: 2rem;
-      float: left;
-      padding: 15px 0; }
-    .pages .article-container .article-button {
-      display: block;
-      float: right; }
-      .pages .article-container .article-button a {
-        padding: 5px;
-        text-decoration: none;
-        color: #394c5f;
-        padding: 10px;
-        background-color: #CFD8DC;
-        border-radius: 48rem;
-        transition: all ease .3s; }
-      .pages .article-container .article-button a:hover {
-        background: rgba(0, 0, 0, 0.1);
-        box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.4);
-        color: #CFD8DC; }
-  .pages .settings-page {
-    width: 75%;
-    margin: auto; }
-    .pages .settings-page .page-title {
-      text-align: center;
-      font-size: 1.3rem;
-      color: #CFD8DC; }
-    .pages .settings-page .disable-latest-articles-users ul {
-      display: flex;
-      flex-direction: row;
-      padding: 0; }
-      .pages .settings-page .disable-latest-articles-users ul li {
-        border-radius: 48rem;
-        width: 22.75%;
-        margin: 1%;
-        list-style: none;
-        text-align: center;
-        border: 1px solid #CFD8DC; }
-        .pages .settings-page .disable-latest-articles-users ul li:hover {
-          cursor: pointer; }
-        .pages .settings-page .disable-latest-articles-users ul li p {
-          padding: 10px 0;
-          margin: 0;
-          font-size: 1rem;
-          color: #CFD8DC; }
-    .pages .settings-page .disable-latest-articles-users .enabled {
-      background-color: #CFD8DC; }
-      .pages .settings-page .disable-latest-articles-users .enabled p {
-        color: #394c5f; }
 
 header {
   height: 80px;
@@ -438,5 +348,97 @@ header {
         header nav ul li a:hover {
           background: rgba(0, 0, 0, 0.1);
           box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.4); }
+
+.settings-page {
+  width: 75%;
+  margin: auto; }
+  .settings-page .page-title {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #CFD8DC; }
+  .settings-page .disable-latest-articles-users ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0; }
+    .settings-page .disable-latest-articles-users ul li {
+      border-radius: 48rem;
+      width: 22.75%;
+      margin: 1%;
+      list-style: none;
+      text-align: center;
+      border: 1px solid #CFD8DC; }
+      .settings-page .disable-latest-articles-users ul li:hover {
+        cursor: pointer; }
+      .settings-page .disable-latest-articles-users ul li p {
+        padding: 10px 0;
+        margin: 0;
+        font-size: 1rem;
+        color: #CFD8DC; }
+  .settings-page .disable-latest-articles-users .enabled {
+    background-color: #CFD8DC; }
+    .settings-page .disable-latest-articles-users .enabled p {
+      color: #394c5f; }
+
+.article-container {
+  background-color: #394c5f;
+  height: 200px;
+  margin: 2.5rem 0;
+  padding: 1.5rem;
+  box-shadow: 0px 5px 13px 8px rgba(255, 255, 255, 0.4); }
+  .article-container .image-container {
+    width: 30%;
+    float: left;
+    height: 180px; }
+    .article-container .image-container img {
+      display: inline-block;
+      width: 90%;
+      height: 100%;
+      padding: 5%;
+      object-fit: cover; }
+    .article-container .image-container:before, .article-container .image-container:after {
+      content: none;
+      display: table; }
+    .article-container .image-container:after {
+      clear: both; }
+  .article-container .text-container {
+    float: left;
+    width: 70%;
+    height: 80%;
+    padding: 1% 0;
+    color: #CFD8DC; }
+    .article-container .text-container:before, .article-container .text-container:after {
+      content: none;
+      display: table; }
+    .article-container .text-container:after {
+      clear: both; }
+    .article-container .text-container h3 {
+      font-size: 1.1rem;
+      margin: 0; }
+    .article-container .text-container p {
+      font-size: 1rem; }
+    .article-container .text-container a {
+      text-decoration: none;
+      color: #CFD8DC;
+      font-style: italic; }
+  .article-container .article-footer {
+    width: 20%;
+    height: 2rem;
+    float: left;
+    padding: 15px 0; }
+  .article-container .article-button {
+    display: block;
+    float: right; }
+    .article-container .article-button a {
+      padding: 5px;
+      text-decoration: none;
+      color: #394c5f;
+      padding: 10px;
+      background-color: #CFD8DC;
+      border-radius: 48rem;
+      transition: all ease .3s; }
+    .article-container .article-button a:hover {
+      background: rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.4);
+      color: #CFD8DC; }
 
 /*# sourceMappingURL=main.css.map */
