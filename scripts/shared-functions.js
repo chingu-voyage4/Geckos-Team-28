@@ -39,3 +39,7 @@ function BuildHtmlArticles(inputArray, idName, className, appendTo) {
 
     });
 }
+
+function CheckForUpdates() {
+    CheckForUpdatesUsers();
+}
