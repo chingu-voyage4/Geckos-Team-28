@@ -5,7 +5,7 @@ chrome.storage.sync.get(['latestUsersArray'], function(result) {
         usersForLatestArticles = result.latestUsersArray;
     }
     GetLatestUsersArray();
-    
+    RunLatestArticles();
 })
 
 
