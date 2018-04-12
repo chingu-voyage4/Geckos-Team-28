@@ -4,9 +4,9 @@ chrome.storage.sync.get(['latestUsersArray'], function(result) {
     if(result.latestUsersArray != undefined) {
         usersForLatestArticles = result.latestUsersArray;
     }
-    GetLatestUsersArray();
-    
-})
+    CheckForUpdates();
+    RunLatestArticles();
+});
 
 
 $(".navpoint").click(function() {

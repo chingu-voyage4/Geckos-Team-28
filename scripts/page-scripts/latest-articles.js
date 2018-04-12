@@ -1,13 +1,23 @@
+var storiesToSort = [];
+var storiesNeedUpdate = false;
+
 function RunLatestArticles() {
 
-var users = usersForLatestArticles
-
-var totalRssCalls = users.length;
+var totalRssCalls = usersForLatestArticles.length;
 var rssCalls = 0;
 
-var storiesToSort = [];
+    // Only run method once per program, or if it needs update
+    if(storiesToSort.length == 0 ||	storiesNeedUpdate) {
+        // Clear HTML, then build...
+        ClearLatestArticles();
 
-    // Get RSS feeds functions
+        $.each(usersForLatestArticles, function(i, userObject) {
+            storiesNeedUpdate = false;
+            GetRssFeeds(userObject);
+        });
+    }
+
+    // Get single RSS feed based on username
     function GetRssFeeds(userObject) {
         if(userObject.enabled) {
             var data = {
@@ -38,18 +48,16 @@ var storiesToSort = [];
         } else {
             rssCalls++;
         }
-    };
+    }; // End of RSS feeds function
 
-    var test = 0;
 
-    // Sort users
+    // Sort users function
     function SortUserStories() {
         var sortedArray = [];
 
-        storiesToSort.forEach(function(userObject) { // Loop through user objects - Userinfo + up to 10 stories
-            
-            userObject.userStories.forEach(function(userStory, i) { // Loop through stories - Individual story
-                // var storyObj = { userData: userObject.userData, story: userStory };
+        $.each(storiesToSort, function(i, userObject) { // Loop through user objects - Userinfo + 10 latest stories
+
+            $.each(userObject.userStories, function(j, userStory) {
 
                 // Build object
                 var articleImageLink = userStory.thumbnail;
@@ -60,6 +68,7 @@ var storiesToSort = [];
                 var articleSummary = userStory.description;
                 var articleDate = userStory.pubDate;
 
+                // Check if the story has an image
                 var storyHasImage = articleImageLink.match(/\.(jpeg|jpg|gif|png)$/) != null ? true : false;
 
                 // Strip and truncate summary
@@ -67,6 +76,7 @@ var storiesToSort = [];
                 var articleSummaryTruncated = jQuery.trim(articleSummaryStripped)
                 .substring(0, 700) + "...";
 
+                // Create storyobject (similar to usersList.json)
                 var storyObj = {
                     'articleImageLink' : articleImageLink,
                     'articleHeading' : articleHeading,
@@ -77,6 +87,7 @@ var storiesToSort = [];
                     'articleDate' : articleDate,
                 };
 
+                // If the story has an image, accept is as an article
                 if(storyHasImage) {
                     // if sorted array is empty, insert object - first object always inserted
                     if(sortedArray.length == 0) {
@@ -84,28 +95,25 @@ var storiesToSort = [];
                     }
 
                     else {
-                        sortStories: // Label for foreach
-                        for(var j = 0; j < sortedArray.length; j++) {
-                            var sortedStoryObject = sortedArray[j];
+                        $.each(sortedArray, function(k, sortedStoryObject) {
 
                             // If date is bigger than current date, insert before..
                             if (new Date(storyObj.articleDate) > new Date(sortedStoryObject.articleDate)) { // no touchstory.pubDate: ', sortedStoryObject.story.pubDate);
 
-                                sortedArray.splice(j, 0, storyObj);
-                                break sortStories; // break label - foreach
+                                sortedArray.splice(k, 0, storyObj);
+                                return false; // break label - foreach
 
-                                // if end of array, insert
-                            } else if(j == sortedArray.length-1) {
+                                // if end of array, insert last
+                            } else if(k == sortedArray.length-1) {
                                 sortedArray.push(storyObj);
-                                break sortStories; // break label - foreach
+                                return false; // break label - foreach
                             }
                             
-                        } // end of for
+                        }); // end of for
 
                     } // end of else (sortedArray is not empty)
 
-                // end of if (article has image)
-                }
+                } // end of if (article has image)
                 
             }); // end of userStory
             
@@ -113,22 +121,13 @@ var storiesToSort = [];
         
         // Run function to convert array to HTML
         BuildHtmlArticles(sortedArray, 'latest', 'article article-latest', '.latest-articles-page .container');
-        
+        // Clear stories array again
+        storiesToSort = [];        
     }
 
-    users.forEach(function(userObject) { // Get RSS Feeds from all users
-        GetRssFeeds(userObject);
-    });
-    
-    
-
-
-
+    // Function to clear latest articles HTML (Used when re-populating latest articles)
+    function ClearLatestArticles() {
+        $(".latest-articles-page .container").html("");
+    }
 
 }
-
-
-
-
-
-// https://medium.com/feed/@tropicalchancer
