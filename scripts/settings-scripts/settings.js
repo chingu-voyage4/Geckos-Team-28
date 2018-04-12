@@ -1,9 +1,8 @@
 function GetLatestUsersArray() { // LATEST ARTICLES USERS TOGGLE
     addHtmlOptions(usersForLatestArticles);
 
-    // Add settings for toggling users
+    // Add HTML elements (buttons) - one per user
     function addHtmlOptions(data) {
-        
         $.each(data, function(i, userObject) {
             // -- Start of build
 
@@ -46,6 +45,7 @@ function GetLatestUsersArray() { // LATEST ARTICLES USERS TOGGLE
 
             // Save array with new toggle
             chrome.storage.sync.set({latestUsersArray: usersForLatestArticles});
+            storiesNeedUpdate = true;
         });
     };
 
@@ -68,8 +68,6 @@ function CheckForUpdatesUsers() {
      *  3: Compare individual array items to see if users have been replaced
      * 4: Run script to add HTML
      */
-
-     console.log("Runnign comparison");
      
     // get JSON data
     $.getJSON("usersList.json", function(data) {
