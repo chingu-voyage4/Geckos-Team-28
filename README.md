@@ -22,7 +22,7 @@ The extension offers settings, so that users can customize their experience as t
 
 ### Feedback
 
-Please [submit a ticket]() if you found a bug, or have an idea for a feature!
+Please [submit a ticket](https://github.com/chingu-voyage4/Geckos-Team-28/issues) if you found a bug, or have an idea for a feature!
 
 ### Contributors / Developers
 [sadou](https://github.com/thierved)  |  [soreg](https://github.com/Soreg)
