@@ -1,14 +1,18 @@
 var storiesToSort = [];
+var storiesNeedUpdate = false;
+
 function RunLatestArticles() {
 
 var totalRssCalls = usersForLatestArticles.length;
 var rssCalls = 0;
 
+    // Only run method once per program, or if it needs update
+    if(storiesToSort.length == 0 ||	storiesNeedUpdate) {
+        // Clear HTML, then build...
+        ClearLatestArticles();
 
-    if(storiesToSort.length == 0) {
         $.each(usersForLatestArticles, function(i, userObject) {
-            console.log(userObject);
-            
+            storiesNeedUpdate = false;
             GetRssFeeds(userObject);
         });
     }
@@ -117,6 +121,13 @@ var rssCalls = 0;
         
         // Run function to convert array to HTML
         BuildHtmlArticles(sortedArray, 'latest', 'article article-latest', '.latest-articles-page .container');
+        // Clear stories array again
+        storiesToSort = [];        
+    }
+
+    // Function to clear latest articles HTML (Used when re-populating latest articles)
+    function ClearLatestArticles() {
+        $(".latest-articles-page .container").html("");
     }
 
 }
