@@ -1,3 +1,16 @@
+/**
+ * Builds HTML for all arrays (latest articles, featured articles, chingu resources)
+ * 
+ * The function is shared so all arrays has the same layout.
+ * 
+ * Function description:
+ * 1: Clear the target HTML (prepare for new articles)
+ * 2: Run a foreach to create HTML per article
+ *  3: Decide whether the imagelink exists (if not, add placeholder)
+ *  4: Create article container
+ *  5: Append article-child elements to article container
+ * 
+ */
 function BuildHtmlArticles(inputArray, idName, className, appendTo) {
 
     $(appendTo).html("");
@@ -40,6 +53,15 @@ function BuildHtmlArticles(inputArray, idName, className, appendTo) {
     });
 }
 
+/**
+ * Only runs once, when the extension (new tab) is opened
+ * 
+ * The function checks for updates where needed.
+ * 
+ * Function order:
+ * 1: CheckForUpdatesUsers - Checks if there is any updated users (deprecated, changed..). This effects the latest-articles function
+ * 
+ */
 function CheckForUpdates() {
     CheckForUpdatesUsers();
 }
