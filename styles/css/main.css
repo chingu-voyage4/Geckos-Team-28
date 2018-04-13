@@ -370,6 +370,9 @@ header {
     text-align: center;
     font-size: 1.3rem;
     color: var(--c_theme_secondary); }
+  .settings-page .disable-latest-articles-users h2 {
+    text-align: center;
+    color: var(--c_theme_secondary); }
   .settings-page .disable-latest-articles-users ul {
     display: flex;
     flex-direction: row;
@@ -401,6 +404,29 @@ header {
     background-color: var(--c_theme_secondary); }
     .settings-page .disable-latest-articles-users .enabled p {
       color: var(--c_primary_color); }
+  .settings-page .color-themes-selector h2 {
+    text-align: center;
+    color: var(--c_theme_secondary); }
+  .settings-page .color-themes-selector ul {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 150px;
+    list-style-type: none;
+    padding: 0; }
+    .settings-page .color-themes-selector ul li {
+      width: 250px;
+      border: 1px solid var(--c_theme_secondary);
+      margin: 10px;
+      cursor: pointer; }
+      .settings-page .color-themes-selector ul li .toggle-color-theme {
+        width: 100%;
+        height: 100%;
+        padding: 15px 0; }
+        .settings-page .color-themes-selector ul li .toggle-color-theme p {
+          text-align: center;
+          color: var(--c_theme_secondary);
+          margin: 0;
+          padding: 0; }
 
 .article-container {
   background-color: var(--c_theme_primary);

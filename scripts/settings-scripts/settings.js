@@ -57,16 +57,22 @@ function ListColorThemes() {
     // List of color themes
     var colorThemes = [
         {
-            'name': 'Chingu Theme (default)',
+            'name': 'Dark Night (default)',
             'class': 'c-theme-1',
-            'primary-color': '#394c5f',
+            'primary-color': '#394C5F',
             'secondary-color': '#CFD8DC'
         },
         {
-            'name': 'Some other theme',
+            'name': 'Dark Blossom',
             'class': 'c-theme-2',
-            'primary-color': 'orange',
-            'secondary-color': 'yellow'
+            'primary-color': '#355c7d',
+            'secondary-color': '#e0b8c3'
+        },
+        {
+            'name': "80's Vibe",
+            'class': 'c-theme-3',
+            'primary-color': '#43C6AC',
+            'secondary-color': '#F8FFAE'
         }
     ]
 
@@ -80,7 +86,9 @@ function ListColorThemes() {
 
         // build user toggle child elements
         $("#color-theme-selector-" + i).html('\
-        <p class="toggle-color-theme" data-class="' + i + '">' + colorTheme.name + '</p>\
+        <div class="toggle-color-theme" data-class="' + i + '">\
+            <p>' + colorTheme.name + '</p>\
+        </div>\
         ');
     });
 
