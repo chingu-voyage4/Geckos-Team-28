@@ -436,6 +436,15 @@ header {
   box-shadow: 6px 3px 19px -1px rgba(0, 0, 0, 0.75);
   text-decoration: none;
   transition: all ease .5s; }
+  @media screen and (max-width: 1160px) {
+    .article-container {
+      height: 261px; } }
+  @media screen and (max-width: 760px) {
+    .article-container {
+      height: 320px; } }
+  @media screen and (max-width: 580px) {
+    .article-container {
+      height: 400px; } }
   .article-container:hover {
     box-shadow: 6px 3px 19px -1px black; }
     .article-container:hover .image-container img {
@@ -459,7 +468,9 @@ header {
       margin: 0;
       font-size: 1.1rem; }
     .article-container .text-container p {
-      font-size: 1rem; }
+      font-size: 1rem;
+      max-height: 60%;
+      overflow: hidden; }
     .article-container .text-container .article-footer .article-author {
       color: var(--c_theme_secondary);
       text-decoration: none;
