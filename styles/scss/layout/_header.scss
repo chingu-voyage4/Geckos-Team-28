@@ -8,11 +8,16 @@ header {
             padding-top: 18px;
             justify-content: center;
             align-items: center;
+            @include break(765){
+                width: 95%;
+                margin: auto;
+                padding-left: 0;
+            }
 
             li {
                 margin: 10px 20px;
                 list-style-type: none;
-
+                
                 a {
                     text-decoration: none;
                     padding: 14px 20px;
@@ -21,6 +26,11 @@ header {
                     font-family: $secondary-font;
                     font-size: 1.3em;
                     transition: all ease .3s;
+                    @include break(765){
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                    }
 
                     &:hover {
                         background: rgba(0,0,0, 0.1);
