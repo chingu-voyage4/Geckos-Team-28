@@ -14,6 +14,11 @@
             display: flex;
             flex-direction: row;
             padding: 0;
+            @include break(765){
+                flex-direction: column;
+                width: 60%;
+                margin: auto;
+            }
 
             li {
                 border-radius: 48rem;                    
@@ -22,6 +27,10 @@
                 list-style: none;
                 text-align: center;
                 border: 1px solid $text-color;
+                @include break(765){
+                    width: 90%;
+                    margin: 5px auto;                    
+                }
 
                 &:hover {
                     cursor: pointer;
