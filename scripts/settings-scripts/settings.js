@@ -52,6 +52,49 @@ function GetLatestUsersArray() { // LATEST ARTICLES USERS TOGGLE
 };
 // END OF LATEST ARTICLES USERS TOGGLE
 
+// LIST COLOR THEMES
+function ListColorThemes() {
+    // List of color themes
+    var colorThemes = [
+        {
+            'name': 'Chingu Theme (default)',
+            'class': 'c-theme-1',
+            'primary-color': 'red',
+            'secondary-color': 'blue'
+        },
+        {
+            'name': 'Some other theme',
+            'class': 'c-theme-2',
+            'primary-color': 'orange',
+            'secondary-color': 'yellow'
+        }
+    ]
+
+    // Build HTML elements (color themes)
+    $.each(colorThemes, function(i, colorTheme) {
+        // build color theme HTML container
+        $('<li />', {
+            id: 'color-theme-selector-' + (i),
+            class: 'color-theme-selector'
+        }).appendTo('.settings-page .container .color-themes-selector ul');
+
+        // build user toggle child elements
+        $("#color-theme-selector-" + i).html('\
+        <p class="toggle-color-theme" data-class="' + i + '">' + colorTheme.name + '</p>\
+        ');
+    });
+
+    // Change css variable on click
+    $('.toggle-color-theme').click(function() {
+        var e = $(this);
+        var i = e.attr('data-class');
+        var colorTheme = colorThemes[i];
+        
+        
+    })
+    
+}
+
 
 // CHECK FOR UPDATES FUNCTIONS
 // Check if there's new users
