@@ -6,10 +6,14 @@
     .page-title {
         text-align: center;
         font-size: 1.3rem;
-        color: $text-color;
+        color: var(--c_theme_secondary);
     }
 
     .disable-latest-articles-users {
+        h2 {
+            text-align: center;
+            color: var(--c_theme_secondary);
+        }
         ul {
             display: flex;
             flex-direction: row;
@@ -26,7 +30,7 @@
                 margin: 1%;
                 list-style: none;
                 text-align: center;
-                border: 1px solid $text-color;
+                border: 1px solid var(--c_theme_secondary);
                 @include break(765){
                     width: 90%;
                     margin: 5px auto;                    
@@ -40,15 +44,48 @@
                     padding: 10px 0;
                     margin: 0;
                     font-size: 1rem;
-                    color: $text-color;                        
+                    color: var(--c_theme_secondary);                        
                 }
             }
         }
 
         .enabled {
-            background-color: $text-color;
+            background-color: var(--c_theme_secondary);
             p {
-                color: $primary-color;
+                color: var(--c_primary_color);
+            }
+        }
+    }
+
+    .color-themes-selector {
+        h2 {
+            text-align: center;
+            color: var(--c_theme_secondary);
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            max-height: 150px;
+            list-style-type: none;
+            padding: 0;
+
+            li {
+                width: 250px;
+                border: 1px solid var(--c_theme_secondary);
+                margin: 10px;
+                cursor: pointer;
+
+                .toggle-color-theme {
+                    width: 100%;
+                    padding: 15px 0;
+
+                    p {
+                        text-align: center;
+                        color: var(--c_theme_secondary);
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
             }
         }
     }

@@ -5,6 +5,7 @@ chrome.storage.sync.get(['latestUsersArray'], function(result) {
         usersForLatestArticles = result.latestUsersArray;
     }
     CheckForUpdates();
+    ListColorThemes();
     RunLatestArticles();
 });
 

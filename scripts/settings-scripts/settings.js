@@ -52,6 +52,61 @@ function GetLatestUsersArray() { // LATEST ARTICLES USERS TOGGLE
 };
 // END OF LATEST ARTICLES USERS TOGGLE
 
+// LIST COLOR THEMES
+function ListColorThemes() {
+    // List of color themes
+    var colorThemes = [
+        {
+            'name': 'Dark Night (default)',
+            'class': 'c-theme-1',
+            'primary-color': '#394C5F',
+            'secondary-color': '#CFD8DC'
+        },
+        {
+            'name': 'Dark Blossom',
+            'class': 'c-theme-2',
+            'primary-color': '#355c7d',
+            'secondary-color': '#e0b8c3'
+        },
+        {
+            'name': "80's Vibe",
+            'class': 'c-theme-3',
+            'primary-color': '#43C6AC',
+            'secondary-color': '#F8FFAE'
+        }
+    ]
+
+    // Build HTML elements (color themes)
+    $.each(colorThemes, function(i, colorTheme) {
+        // build color theme HTML container
+        $('<li />', {
+            id: 'color-theme-selector-' + (i),
+            class: 'color-theme-selector'
+        }).appendTo('.settings-page .container .color-themes-selector ul');
+
+        // build user toggle child elements
+        $("#color-theme-selector-" + i).html('\
+        <div class="toggle-color-theme" data-class="' + i + '">\
+            <p>' + colorTheme.name + '</p>\
+        </div>\
+        ');
+    });
+
+    // Change css variable on click
+    $('.toggle-color-theme').click(function() {
+        var e = $(this);
+        var i = e.attr('data-class');
+        var colorTheme = colorThemes[i];
+        
+        // Change CSS variables
+        const body = document.querySelector('body');
+        body.style.setProperty('--c_theme_primary', colorTheme["primary-color"]);
+        body.style.setProperty('--c_theme_secondary', colorTheme["secondary-color"]);
+        
+    })
+    
+}
+
 
 // CHECK FOR UPDATES FUNCTIONS
 // Check if there's new users
