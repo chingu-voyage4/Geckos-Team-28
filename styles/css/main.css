@@ -420,7 +420,6 @@ header {
       cursor: pointer; }
       .settings-page .color-themes-selector ul li .toggle-color-theme {
         width: 100%;
-        height: 100%;
         padding: 15px 0; }
         .settings-page .color-themes-selector ul li .toggle-color-theme p {
           text-align: center;
