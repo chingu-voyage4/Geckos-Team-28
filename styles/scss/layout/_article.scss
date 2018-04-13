@@ -9,6 +9,18 @@
     text-decoration: none;
     transition: all ease .5s;
 
+    @include breakpoint(tabletlandscape) {
+        height: 261px;
+    }
+
+    @include breakpoint(mobilelandscape) {
+        height: 320px;
+    }
+
+    @include breakpoint(mobile) {
+        height: 400px;
+    }
+
     &:hover {
         box-shadow: 6px 3px 19px -1px rgba(0,0,0, 1);
 
@@ -44,6 +56,8 @@
 
         p {
             font-size: 1rem;
+            max-height: 60%;
+            overflow: hidden;
         }
 
         .article-footer .article-author {
@@ -53,82 +67,3 @@
         }
     }
 }
-
-// .article-container {
-//     background-color: var(--c_theme_primary);
-//     height: 200px;
-//     margin: 2.5rem 0;
-//     padding: 1.5rem;
-//     box-shadow: 0px 5px 13px 8px rgba(255, 255, 255, 0.4);
-//     @include break(765){
-//         height: 270px;
-//         padding: 0.5rem;
-//     }
-
-//     .image-container {
-//         width: 30%;
-//         float: left;
-//         height: 180px;
-//         img {
-//             display: inline-block;
-//             width: 90%;
-//             height: 100%;
-//             padding: 5%;
-//             object-fit: cover;
-//         }
-//         @include clearfix;
-//     }
-
-//     .text-container {
-//         float: left;
-//         width: 70%;
-//         height: 80%;
-//         padding: 1% 0;
-//         color: var(--c_theme_secondary);
-//         @include clearfix;
-
-//         h3 {
-//             font-size: 1.1rem;
-//             margin: 0;                
-//         }
-
-//         p {
-//             font-size: 1rem;
-//         }
-
-//         a {
-//             text-decoration: none;
-//             color: var(--c_theme_secondary);
-//             font-style: italic;
-//         }
-//     } 
-
-//     .article-footer {
-//         width: 20%;
-//         height: 2rem;
-//         float: left;
-//         padding: 15px 0;
-//     }
-
-//     .article-button {
-//         display: block;
-//         float: right;
-
-//         a {
-//             padding: 5px;
-//             text-decoration: none;
-//             color: var(--c_theme_primary);
-//             padding: 10px;
-//             background-color: var(--c_theme_secondary);
-//             border-radius: 48rem;
-//             transition: all ease .3s;
-//         }
-
-//         a:hover {
-//             background: rgba(0,0,0, 0.1);
-//             box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.4);
-//             color: var(--c_theme_secondary);
-//         }
-//     }
-    
-// }
