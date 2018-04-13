@@ -29,6 +29,18 @@ function BuildHtmlArticles(inputArray, idName, className, appendTo) {
             class: className
         }).appendTo(appendTo);
 
+        var summary = articleObject.articleSummary;
+        summary = summary.split(' ');
+
+        // Ensure summary words are not too long
+        $.each(summary, function(i, word) {
+            if (word.indexOf("https") >= 0) {
+                summary[i] = "";
+            }
+        })
+
+        summary = summary.join(' ');
+
         // build featured article child elements
         $('#' + idName + '-' + i).html('\
         <a href="' + articleObject.articleLink + '" target="_blank" class="article-container">\
@@ -37,7 +49,7 @@ function BuildHtmlArticles(inputArray, idName, className, appendTo) {
             </div>\
             <div class="text-container">\
                 <h3 class="article-heading">' + articleObject.articleHeading + '</h3>\
-                <p class="article-summary">' + articleObject.articleSummary + '</p>\
+                <p class="article-summary">' + summary + '</p>\
                     <div class="article-footer">\
                         <p class="article-author">' + articleObject.articleAuthorName + '</p>\
                     </div>\

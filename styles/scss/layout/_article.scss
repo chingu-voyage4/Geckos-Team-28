@@ -13,12 +13,15 @@
         height: 261px;
     }
 
+    @include breakpoint(tablet) {
+        flex-direction: column;
+        height: auto;
+    }
+
     @include breakpoint(mobilelandscape) {
-        height: 320px;
     }
 
     @include breakpoint(mobile) {
-        height: 400px;
     }
 
     &:hover {
@@ -35,6 +38,10 @@
         height: 100%;
         border-right: 1px solid #333;
         overflow: hidden;
+
+        @include breakpoint(tablet) {
+            flex: 2;
+        }
 
         img {
             object-fit: cover;

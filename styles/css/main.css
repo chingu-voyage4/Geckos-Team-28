@@ -439,12 +439,10 @@ header {
   @media screen and (max-width: 1160px) {
     .article-container {
       height: 261px; } }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 960px) {
     .article-container {
-      height: 320px; } }
-  @media screen and (max-width: 580px) {
-    .article-container {
-      height: 400px; } }
+      flex-direction: column;
+      height: auto; } }
   .article-container:hover {
     box-shadow: 6px 3px 19px -1px black; }
     .article-container:hover .image-container img {
@@ -455,6 +453,9 @@ header {
     height: 100%;
     border-right: 1px solid #333;
     overflow: hidden; }
+    @media screen and (max-width: 960px) {
+      .article-container .image-container {
+        flex: 2; } }
     .article-container .image-container img {
       object-fit: cover;
       width: 100%;
