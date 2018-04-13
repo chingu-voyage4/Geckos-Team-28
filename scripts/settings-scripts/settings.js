@@ -59,8 +59,8 @@ function ListColorThemes() {
         {
             'name': 'Chingu Theme (default)',
             'class': 'c-theme-1',
-            'primary-color': 'red',
-            'secondary-color': 'blue'
+            'primary-color': '#394c5f',
+            'secondary-color': '#CFD8DC'
         },
         {
             'name': 'Some other theme',
@@ -90,6 +90,10 @@ function ListColorThemes() {
         var i = e.attr('data-class');
         var colorTheme = colorThemes[i];
         
+        // Change CSS variables
+        const body = document.querySelector('body');
+        body.style.setProperty('--c_theme_primary', colorTheme["primary-color"]);
+        body.style.setProperty('--c_theme_secondary', colorTheme["secondary-color"]);
         
     })
     

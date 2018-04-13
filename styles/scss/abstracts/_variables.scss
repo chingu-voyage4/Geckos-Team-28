@@ -1,8 +1,14 @@
 $page_container_width: 1500px;
 
+// Theme colors (initial)
+:root {
+    --c_theme_primary : #394c5f;
+    --c_theme_secondary: #CFD8DC;
+}
+
 // Colors
-$primary-color: #394c5f;
-$text-color: #CFD8DC;
+// $primary-color: #394c5f;
+// $text-color: #CFD8DC;
 
 //Fonts
 $secondary-font: 'Roboto', sans-serif;
