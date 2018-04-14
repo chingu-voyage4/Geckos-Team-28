@@ -74,10 +74,11 @@ function ListColorThemes() {
             'primary-color': '#43C6AC',
             'secondary-color': '#F8FFAE'
         }
-    ]
+    ];
 
-    // Build HTML elements (color themes)
+    // Build HTML (color themes)
     $.each(colorThemes, function(i, colorTheme) {
+
         // build color theme HTML container
         $('<li />', {
             id: 'color-theme-selector-' + (i),
@@ -92,25 +93,38 @@ function ListColorThemes() {
         ');
     });
 
+    // Load saved color theme (chrome storage)
+    chrome.storage.sync.get(['colorTheme'], function(result) {
+        if(result != undefined) {
+            ChangeColorTheme(result.colorTheme);
+        }
+    });
+
     // Change css variable on click
     $('.toggle-color-theme').click(function() {
         var e = $(this);
         var i = e.attr('data-class');
         var colorTheme = colorThemes[i];
-        
+
+        // Save color theme
+        chrome.storage.sync.set({colorTheme: colorTheme});
+
+        // change color theme (css)
+        ChangeColorTheme(colorTheme);
+    });
+
+    function ChangeColorTheme(colorTheme) {
         // Change CSS variables
         const body = document.querySelector('body');
         body.style.setProperty('--c_theme_primary', colorTheme["primary-color"]);
         body.style.setProperty('--c_theme_secondary', colorTheme["secondary-color"]);
-        
-    })
+    }
     
 }
 
 
-// CHECK FOR UPDATES FUNCTIONS
+// SINGLE-RUN FUNCTION - Runs once per page load
 // Check if there's new users
-
 function CheckForUpdatesUsers() {
     /**
      * This script check for  updated users, for the latest-users toggle in the settings-page.
