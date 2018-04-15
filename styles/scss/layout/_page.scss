@@ -7,11 +7,18 @@
     width: 100%;
     min-height: calc(100% - #{$headerHeight});
 
+    @include break(780) {
+        position: static;
+    }
+
     .page {
         display:none;
         margin-top: 30px;
         width: 100%;
-
+        @include break(780) {
+            padding: 2rem 0;
+            margin: 0;
+        }
         &.selected {
             display: block;
         }

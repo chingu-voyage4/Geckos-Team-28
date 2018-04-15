@@ -1,14 +1,39 @@
 header {
     height: $headerHeight;     
     background-color: var(--c_theme_primary);
-    nav {        
+    
+    @include break(780) {
+        padding-top: 4rem;
+        height: 300px;
+    }
+    .menu {
+        display: none;
+        @include break(780) {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            padding: 15px;
+            font-size: 1.5rem;
+            color: #eee;
+            display: block;
+            &:hover {
+                background: rgba(0,0,0, 0.1);
+                box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+            }
+        }
+    }
+
+    nav {   
+        
         ul {
             display: flex;
             margin: 0;
             padding-top: 18px;
             justify-content: center;
             align-items: center;
-            @include break(765){
+            @include break(780){
+                flex-direction: column;
                 width: 95%;
                 margin: auto;
                 padding-left: 0;
@@ -26,7 +51,7 @@ header {
                     font-family: $secondary-font;
                     font-size: 1.3em;
                     transition: all ease .3s;
-                    @include break(765){
+                    @include break(780){
                         display: block;
                         width: 100%;
                         text-align: center;
