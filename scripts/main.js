@@ -12,6 +12,16 @@ chrome.storage.sync.get(['latestUsersArray'], function(result) {
 
 // Navigation events
 $(".navpoint").click(function() {
+    // If navbar is extended, close it..
+    var toggleElement = $('.main-nav');
+
+    if(toggleElement.hasClass('visible')) {
+        
+        toggleElement.removeClass('visible');
+        toggleElement.addClass('collapsed');
+    };
+    
+    // Change page
     var clickedElement = $(this);
     var page = clickedElement.attr("data-page-navpoint");
     $(".page").removeClass("selected");
