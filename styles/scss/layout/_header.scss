@@ -4,7 +4,7 @@ header {
     
     @include break(780) {
         padding-top: 4rem;
-        height: 300px;
+        height: auto;
     }
     .menu {
         display: none;
@@ -25,6 +25,12 @@ header {
     }
 
     nav {   
+
+        &.collapsed {
+            @include break(780) {
+                display: none;
+            }
+        }
         
         ul {
             display: flex;
