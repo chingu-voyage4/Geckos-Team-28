@@ -1,5 +1,6 @@
 var usersForLatestArticles = [];
 
+// Runs once on page load (load settings, get articles..)
 chrome.storage.sync.get(['latestUsersArray'], function(result) {
     if(result.latestUsersArray != undefined) {
         usersForLatestArticles = result.latestUsersArray;
@@ -9,7 +10,7 @@ chrome.storage.sync.get(['latestUsersArray'], function(result) {
     RunLatestArticles();
 });
 
-
+// Navigation events
 $(".navpoint").click(function() {
     var clickedElement = $(this);
     var page = clickedElement.attr("data-page-navpoint");
@@ -30,4 +31,22 @@ $(".navpoint").click(function() {
     } else if(page == "settings-page") {
         $(".settings-page").addClass("selected");
     }
+});
+
+// Hamburger menu
+$('.menu').click(function() {
+    var toggleElement = $('.main-nav');
+
+    // Show navbar
+    if(toggleElement.hasClass('collapsed')) {
+
+        toggleElement.removeClass('collapsed');
+        toggleElement.addClass('visible');
+
+    } else { // Hide navbar
+
+        toggleElement.removeClass('visible');
+        toggleElement.addClass('collapsed');
+    }
+    
 });
