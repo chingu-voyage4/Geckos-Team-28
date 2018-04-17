@@ -68,7 +68,8 @@ function ListColorThemes() {
             'button-inner-color-active': '#CFD8DC',
             'button-text-active': '#394C5F',
             'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
-            'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)'
+            'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)',
+            'header-color': '#394C5F'
         },
         {
             'name': 'Dark Blossom',
@@ -82,7 +83,8 @@ function ListColorThemes() {
             'button-inner-color-active': '#e0b8c3',
             'button-text-active': '#000',
             'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
-            'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)'
+            'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)',
+            'header-color': '#355c7d'
         },
         {
             'name': "Blue Alpha",
@@ -96,7 +98,8 @@ function ListColorThemes() {
             'button-inner-color-active': '#b91400',
             'button-text-active': '#90caf9',
             'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
-            'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)'
+            'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)',
+            'header-color': '#c3deff'
         }
     ];
 
@@ -150,6 +153,7 @@ function ListColorThemes() {
         body.style.setProperty('--c_theme_button_text_active', colorTheme["button-text-active"]);
         body.style.setProperty('--c_theme_shadow', colorTheme["shadow-color"]);
         body.style.setProperty('--c_theme_shadow_hover', colorTheme["shadow-color-hover"]);
+        body.style.setProperty('--c_theme_header', colorTheme["header-color"]);
         
     }
     
