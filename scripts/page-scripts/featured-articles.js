@@ -8,20 +8,89 @@ function RunFeaturedArticles() {
         // Get data from JSON
         $.getJSON("usersList.json", function(data) {
 
+            var userObjects = data.featuredArticles.articlesBasedOnTitle;
+
             // calculation variables
-            var totalFeatured = data.featuredArticles.length;
-            var totalArticlesTransfered = 0;
+            var totalFeatured = userObjects.length;
+            var totalFeaturedCount = 0;
+
+            // Get stories from user
+            function GetStoriesFromUsers(user, title, amount) {
+                var data = {
+                    rss_url: 'https://medium.com/feed/@' + user // Feed URL
+                };
+                $.get('https://api.rss2json.com/v1/api.json', data, function (response) { // Get feed
+                if (response.status == 'ok') {
+
+                    // Generate the initial user object
+                    var userObject = response.feed;
+                    var stories = response.items;
+
+                    // Counter for amount of stories found
+                    var i = 0;
+                    // Find stories based on title
+                    $.each(stories, function(j, story) {
+                        if (story.title.indexOf(title) >= 0) {
+
+                            // Build article object
+                            var articleImageLink = story.thumbnail;
+                            var articleHeading = story.title;
+                            var articleLink = story.link;
+                            var articleAuthorName = story.author;
+                            var articleAuthorLink = userObject.link;
+                            var articleSummary = story.description;
+                            var articleDate = story.pubDate;
+
+                            // Strip and truncate summary on article object
+                            var articleSummaryStripped = articleSummary.replace(/<(?:.|\n)*?>/gm, '');
+                            var articleSummaryTruncated = jQuery.trim(articleSummaryStripped)
+                            .substring(0, 700) + "...";
+
+                            // Create storyobject (similar to usersList.json)
+                            var storyObj = {
+                                'articleImageLink' : articleImageLink,
+                                'articleHeading' : articleHeading,
+                                'articleLink' : articleLink,
+                                'articleAuthorName' : articleAuthorName,
+                                'articleAuthorLink' : articleAuthorLink,
+                                'articleSummary' : articleSummaryTruncated,
+                                'articleDate' : articleDate,
+                            };
+
+                            featuredArticles.push(storyObj);
+                            i++;
+
+                            // If amount is reached, jump out..
+                            if(i === amount) {
+                                return false;
+                            }
+                        }
+                    });
     
-            // Transfer articles from json to local array
-            $.each(data.featuredArticles, function(i, articleObject) {
-                featuredArticles.push(articleObject);
-                totalArticlesTransfered++;
+                    totalFeaturedCount++;
+
+                    // If RSS feed fails..
+                    } else {
+                        console.log(response.message);
+                        totalFeaturedCount++;
+                    }
+
+                    // Only call this function once all RSS Feeds are done
+                    if(totalFeaturedCount == totalFeatured) {
+                        BuildHtmlArticles(featuredArticles, 'featured', 'article article-featured', '.featured-articles-page .container');
+                    }
+    
+                });
+            }; // End of RSS feeds function
+    
+            // Get RSS feed from users
+            $.each(userObjects, function(i, userObject) {
+                var user = userObject.user;
+                var title = userObject.title;
+                var amount = userObject.amount;
+
+                GetStoriesFromUsers(user, title, amount);
             });
-    
-            // When all articles are in local array, run function to convert to HTML
-            if(totalArticlesTransfered == totalFeatured) {
-                BuildHtmlArticles(featuredArticles, 'featured', 'article article-featured', '.featured-articles-page .container');
-            }
             
         });
     }

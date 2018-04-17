@@ -1,25 +1,19 @@
 {
-      "usersLatestArticles":[ "francesco.agnoletto", "P1xt", "tropicalchancer", "jdmedlock" ],
-      "featuredArticles": [
-            {
-                  "articleImageLink": "https://cdn-images-1.medium.com/fit/t/800/240/1*9dXZcnE1q6OlcObGv1swDg.png",
-                  "articleHeading": "Chingu Weekly Vol. 54",
-                  "articleLink": "https://medium.com/chingu/chingu-weekly-vol-54-5782cfff703b",
-                  "articleAuthorName": "Chance Taken",
-                  "articleAuthorLink": "https://medium.com/@tropicalchancer",
-                  "articleSummary": "On the weekly check-ins there is a question that asks: Is there anyone on your team who has been super helpful, kind, hard-working, etc. and deserves a shout-out? Here’s the list of the people who got a shout-out (or 3) last week",
-                  "articleDate": "Mar 19"
-            },
-            {
-                  "articleImageLink": "https://cdn-images-1.medium.com/fit/t/800/240/1*_lQDjckoBL-M8cIjuvsR4w.png",
-                  "articleHeading": "This is what happens when self-directed learners come together to code!",
-                  "articleLink": "https://medium.com/chingu/this-is-what-happens-when-self-directed-learners-come-together-to-code-4e9b5d62d7a6",
-                  "articleAuthorName": "Chance Taken",
-                  "articleAuthorLink": "https://medium.com/@tropicalchancer",
-                  "articleSummary": "Below is not only an awesome collection of projects, but even more than that it is an example of what is possible when self-directed learners from across the planet come together to build, help and learn together.",
-                  "articleDate": "Feb 23"
-            }
-      ],
+      "usersLatestArticles":[ "jdmedlock", "francesco.agnoletto", "P1xt", "tropicalchancer", "vampiire", "spences10", "alexever17" ],
+      "featuredArticles": {
+            "articlesBasedOnTitle": [
+                  {
+                        "user": "tropicalChancer",
+                        "title": "Chingu Weekly",
+                        "amount": 1
+                  },
+                  {
+                        "user": "tropicalChancer",
+                        "title": "Overheard in Chingu",
+                        "amount": 1
+                  }
+            ]
+      },
       "chinguResourcesArticles": [
             {
                   "articleImageLink": "",
