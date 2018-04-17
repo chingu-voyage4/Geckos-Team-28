@@ -95,20 +95,6 @@ function ListColorThemes() {
             'button-border-color-active': '#F8FFAE',
             'button-inner-color-active': '#F8FFAE',
             'button-text-active': '#43C6AC',
-            'shadow-color': '6px 3px 19px -1px rgba(255, 93, 23, 0.75)',
-            'shadow-color-hover': '6px 3px 19px -1px rgba(255, 93, 23, 0.25)'
-        },
-        {
-            'name': 'Test theme',
-            'class': 'c-theme-1',
-            'primary-color': '#394C5F',
-            'secondary-color': '#CFD8DC',
-            'font-color': '#CFD8DC',
-            'button-border-color': '#CFD8DC',
-            'button-inner-color': '#394C5F',
-            'button-border-color-active': '#CFD8DC',
-            'button-inner-color-active': '#CFD8DC',
-            'button-text-active': '#394C5F',
             'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
             'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)'
         }
