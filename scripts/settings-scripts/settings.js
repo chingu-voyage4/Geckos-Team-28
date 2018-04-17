@@ -60,19 +60,46 @@ function ListColorThemes() {
             'name': 'Dark Night (default)',
             'class': 'c-theme-1',
             'primary-color': '#394C5F',
-            'secondary-color': '#CFD8DC'
+            'secondary-color': '#CFD8DC',
+            'font-color': '#CFD8DC',
+            'button-border-color': '#CFD8DC',
+            'button-inner-color': '#394C5F',
+            'button-border-color-active': '#CFD8DC',
+            'button-inner-color-active': '#CFD8DC',
+            'button-text-active': '#394C5F',
+            'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
+            'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)',
+            'header-color': '#394C5F'
         },
         {
             'name': 'Dark Blossom',
             'class': 'c-theme-2',
             'primary-color': '#355c7d',
-            'secondary-color': '#e0b8c3'
+            'secondary-color': '#e0b8c3',
+            'font-color': '#e0b8c3',
+            'button-border-color': '#e0b8c3',
+            'button-inner-color': '#355c7d',
+            'button-border-color-active': '#e0b8c3',
+            'button-inner-color-active': '#e0b8c3',
+            'button-text-active': '#000',
+            'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
+            'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)',
+            'header-color': '#355c7d'
         },
         {
-            'name': "80's Vibe",
+            'name': "Blue Alpha",
             'class': 'c-theme-3',
-            'primary-color': '#43C6AC',
-            'secondary-color': '#F8FFAE'
+            'primary-color': '#90caf9',
+            'secondary-color': '#F8FFAE',
+            'font-color': '#263238',
+            'button-border-color': '#b91400',
+            'button-inner-color': '#90caf9',
+            'button-border-color-active': '#b91400',
+            'button-inner-color-active': '#b91400',
+            'button-text-active': '#90caf9',
+            'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
+            'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)',
+            'header-color': '#c3deff'
         }
     ];
 
@@ -85,7 +112,7 @@ function ListColorThemes() {
             class: 'color-theme-selector'
         }).appendTo('.settings-page .container .color-themes-selector ul');
 
-        // build user toggle child elements
+        // build color theme container child elements
         $("#color-theme-selector-" + i).html('\
         <div class="toggle-color-theme" data-class="' + i + '">\
             <p>' + colorTheme.name + '</p>\
@@ -118,6 +145,16 @@ function ListColorThemes() {
         const body = document.querySelector('body');
         body.style.setProperty('--c_theme_primary', colorTheme["primary-color"]);
         body.style.setProperty('--c_theme_secondary', colorTheme["secondary-color"]);
+        body.style.setProperty('--c_theme_font', colorTheme["font-color"]);
+        body.style.setProperty('--c_theme_button_border', colorTheme["button-border-color"]);
+        body.style.setProperty('--c_theme_button_inner', colorTheme["button-inner-color"]);
+        body.style.setProperty('--c_theme_button_border_active', colorTheme["button-border-color-active"]);
+        body.style.setProperty('--c_theme_button_inner_active', colorTheme["button-inner-color-active"]);
+        body.style.setProperty('--c_theme_button_text_active', colorTheme["button-text-active"]);
+        body.style.setProperty('--c_theme_shadow', colorTheme["shadow-color"]);
+        body.style.setProperty('--c_theme_shadow_hover', colorTheme["shadow-color-hover"]);
+        body.style.setProperty('--c_theme_header', colorTheme["header-color"]);
+        
     }
     
 }
