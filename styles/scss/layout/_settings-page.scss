@@ -6,13 +6,11 @@
     .page-title {
         text-align: center;
         font-size: 1.3rem;
-        color: var(--c_theme_secondary);
     }
 
     .disable-latest-articles-users {
         h2 {
             text-align: center;
-            color: var(--c_theme_secondary);
         }
         ul {
             display: flex;
@@ -30,7 +28,8 @@
                 margin: 1%;
                 list-style: none;
                 text-align: center;
-                border: 1px solid var(--c_theme_secondary);
+                border: 1px solid var(--c_theme_button_border);
+                background-color: var(--c_theme_button_inner);
                 @include break(765){
                     width: 90%;
                     margin: 5px auto;                    
@@ -44,15 +43,16 @@
                     padding: 10px 0;
                     margin: 0;
                     font-size: 1rem;
-                    color: var(--c_theme_secondary);                        
                 }
             }
         }
 
         .enabled {
-            background-color: var(--c_theme_secondary);
+            background-color: var(--c_theme_button_inner_active);
+            border-color: var(--c_theme_button_border_active);
+
             p {
-                color: var(--c_primary_color);
+                color: var(--c_theme_button_text_active);
             }
         }
     }
@@ -60,7 +60,6 @@
     .color-themes-selector {
         h2 {
             text-align: center;
-            color: var(--c_theme_secondary);
         }
         ul {
             display: flex;
@@ -71,8 +70,9 @@
 
             li {
                 width: 250px;
-                border: 1px solid var(--c_theme_secondary);
+                border: 1px solid var(--c_theme_button_border);
                 margin: 10px;
+                background-color: var(--c_theme_button_inner);
                 cursor: pointer;
 
                 .toggle-color-theme {
@@ -81,7 +81,6 @@
 
                     p {
                         text-align: center;
-                        color: var(--c_theme_secondary);
                         margin: 0;
                         padding: 0;
                     }
