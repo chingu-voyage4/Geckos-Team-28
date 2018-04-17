@@ -1,14 +1,16 @@
 $page_container_width: 1500px;
 
-// Theme colors (initial)
+// Theme colors (initial theme)
 :root {
-    --c_theme_primary : #394c5f;
+    --c_theme_primary: #394c5f;
     --c_theme_secondary: #CFD8DC;
+    --c_theme_font: #CFD8DC;
+    --c_theme_button_border: #CFD8DC;
+    --c_theme_button_inner: #394c5f;
+    --c_theme_button_border_active: #CFD8DC;
+    --c_theme_button_inner_border: #CFD8DC;
+    --c_theme_shadow: '6px 3px 19px -1px rgba(0,0,0, 1)';
 }
-
-// Colors
-// $primary-color: #394c5f;
-// $text-color: #CFD8DC;
 
 //Fonts
 $secondary-font: 'Roboto', sans-serif;
