@@ -5,7 +5,7 @@
   --c_theme_button_border: #CFD8DC;
   --c_theme_button_inner: #394c5f;
   --c_theme_button_border_active: #CFD8DC;
-  --c_theme_button_inner_border: #CFD8DC;
+  --c_theme_button_inner_active: #CFD8DC;
   --c_theme_shadow: '6px 3px 19px -1px rgba(0,0,0, 1)'; }
 
 .object-fit img {

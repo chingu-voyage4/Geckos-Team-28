@@ -74,7 +74,6 @@ function ListColorThemes() {
             'primary-color': '#355c7d',
             'secondary-color': '#e0b8c3',
             'font-color': 'secondary-color',
-            'font-color': 'secondary-color',
             'button-border-color': 'secondary-color',
             'button-inner-color': 'primary-color',
             'button-border-color-active': 'secondary-color',
@@ -87,12 +86,11 @@ function ListColorThemes() {
             'primary-color': '#43C6AC',
             'secondary-color': '#F8FFAE',
             'font-color': 'secondary-color',
-            'font-color': 'secondary-color',
             'button-border-color': 'secondary-color',
             'button-inner-color': 'primary-color',
             'button-border-color-active': 'secondary-color',
             'button-inner-color-active': 'secondary-color',
-            'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 1)'
+            'shadow-color': '6px 3px 19px -1px rgba(255, 255, 255, 1)'
         }
     ];
 
@@ -138,6 +136,12 @@ function ListColorThemes() {
         const body = document.querySelector('body');
         body.style.setProperty('--c_theme_primary', colorTheme["primary-color"]);
         body.style.setProperty('--c_theme_secondary', colorTheme["secondary-color"]);
+        body.style.setProperty('--c_theme_font', colorTheme["font-color"]);
+        body.style.setProperty('--c_theme_button_border', colorTheme["button-border-color"]);
+        body.style.setProperty('--c_theme_button_inner', colorTheme["button-inner-color"]);
+        body.style.setProperty('--c_theme_border_active', colorTheme["button-border-color-active"]);
+        body.style.setProperty('--c_theme_inner_active', colorTheme["button-inner-color-active"]);
+        body.style.setProperty('--c_theme_shadow', colorTheme["shadow-color"]);
     }
     
 }
