@@ -85,16 +85,16 @@ function ListColorThemes() {
             'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)'
         },
         {
-            'name': "80's Vibe",
+            'name': "Blue Alpha",
             'class': 'c-theme-3',
-            'primary-color': '#43C6AC',
+            'primary-color': '#90caf9',
             'secondary-color': '#F8FFAE',
-            'font-color': '#F8FFAE',
-            'button-border-color': '#F8FFAE',
-            'button-inner-color': '#43C6AC',
-            'button-border-color-active': '#F8FFAE',
-            'button-inner-color-active': '#F8FFAE',
-            'button-text-active': '#43C6AC',
+            'font-color': '#263238',
+            'button-border-color': '#b91400',
+            'button-inner-color': '#90caf9',
+            'button-border-color-active': '#b91400',
+            'button-inner-color-active': '#b91400',
+            'button-text-active': '#90caf9',
             'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
             'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)'
         }
