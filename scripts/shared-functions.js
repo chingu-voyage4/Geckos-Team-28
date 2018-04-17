@@ -74,3 +74,32 @@ function BuildHtmlArticles(inputArray, idName, className, appendTo) {
 function CheckForUpdates() {
     CheckForUpdatesUsers();
 }
+
+
+/**
+ * 
+ * 
+ * 
+ * 
+ */
+
+ function GetStoriesFromUser(user, title, amount) {
+        var data = {
+            rss_url: 'https://medium.com/feed/@' + userObject.user // Feed URL
+        };
+        $.get('https://api.rss2json.com/v1/api.json', data, function (response) { // Get feed
+        if (response.status == 'ok') {
+
+            var user = response.feed;
+            var stories = response.items;
+
+            var userObject = { 'userData':user, 'userStories':stories };
+
+            storiesToSort.push(userObject);
+
+        } else {
+            console.log(response.message);
+        }
+
+    });
+ }
