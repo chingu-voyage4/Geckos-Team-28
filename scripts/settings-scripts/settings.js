@@ -60,19 +60,39 @@ function ListColorThemes() {
             'name': 'Dark Night (default)',
             'class': 'c-theme-1',
             'primary-color': '#394C5F',
-            'secondary-color': '#CFD8DC'
+            'secondary-color': '#CFD8DC',
+            'font-color': 'secondary-color',
+            'button-border-color': 'secondary-color',
+            'button-inner-color': 'primary-color',
+            'button-border-color-active': 'secondary-color',
+            'button-inner-color-active': 'secondary-color',
+            'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 1)'
         },
         {
             'name': 'Dark Blossom',
             'class': 'c-theme-2',
             'primary-color': '#355c7d',
-            'secondary-color': '#e0b8c3'
+            'secondary-color': '#e0b8c3',
+            'font-color': 'secondary-color',
+            'font-color': 'secondary-color',
+            'button-border-color': 'secondary-color',
+            'button-inner-color': 'primary-color',
+            'button-border-color-active': 'secondary-color',
+            'button-inner-color-active': 'secondary-color',
+            'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 1)'
         },
         {
             'name': "80's Vibe",
             'class': 'c-theme-3',
             'primary-color': '#43C6AC',
-            'secondary-color': '#F8FFAE'
+            'secondary-color': '#F8FFAE',
+            'font-color': 'secondary-color',
+            'font-color': 'secondary-color',
+            'button-border-color': 'secondary-color',
+            'button-inner-color': 'primary-color',
+            'button-border-color-active': 'secondary-color',
+            'button-inner-color-active': 'secondary-color',
+            'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 1)'
         }
     ];
 
@@ -85,7 +105,7 @@ function ListColorThemes() {
             class: 'color-theme-selector'
         }).appendTo('.settings-page .container .color-themes-selector ul');
 
-        // build user toggle child elements
+        // build color theme container child elements
         $("#color-theme-selector-" + i).html('\
         <div class="toggle-color-theme" data-class="' + i + '">\
             <p>' + colorTheme.name + '</p>\
