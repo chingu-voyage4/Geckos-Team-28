@@ -54,3 +54,13 @@
         clear: both;
     }
 }
+
+@mixin keyframes($animation_name) {
+    @keyframes #{$animation_name} {
+        @content;
+    }
+}
+
+@mixin animate($animation, $duration, $delay) {
+    animation: $animation $duration ease-in-out $delay;
+}

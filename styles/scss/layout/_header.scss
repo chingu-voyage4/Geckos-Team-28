@@ -28,8 +28,12 @@ header {
 
         &.collapsed {
             @include break(780) {
-                display: none;
+                display: none;                
             }
+        }
+
+        @include break(780) {
+            @include animate(slide_in, 0.3s, 0s);
         }
         
         ul {
@@ -76,3 +80,13 @@ header {
     }
 
 }
+
+@include keyframes(slide_in) {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%)
+    }
+}
+

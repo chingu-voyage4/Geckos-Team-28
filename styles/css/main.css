@@ -361,6 +361,9 @@ header {
   @media only screen and (max-width: 780px) {
     header nav.collapsed {
       display: none; } }
+  @media only screen and (max-width: 780px) {
+    header nav {
+      animation: slide_in 0.3s ease-in-out 0s; } }
   header nav ul {
     display: flex;
     margin: 0;
@@ -393,6 +396,11 @@ header {
           background: rgba(0, 0, 0, 0.1);
           box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.4); }
 
+@keyframes slide_in {
+  0% {
+    transform: translateY(-100%); }
+  100% {
+    transform: translateY(0%); } }
 .settings-page {
   width: 75%;
   margin: auto; }
