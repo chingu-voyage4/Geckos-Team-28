@@ -176,7 +176,7 @@ function CheckForUpdatesUsers() {
      */
      
     // get JSON data
-    $.getJSON("usersList.json", function(data) {
+    $.getJSON("https://www.jasonbase.com/things/x7zZ.json", function(data) {
         var tempUserArray = [];
 
         // Calculation variables

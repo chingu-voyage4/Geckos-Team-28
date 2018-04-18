@@ -5,7 +5,7 @@ function RunChinguResources() {
     if(chinguResourcesArticles.length == 0) {
 
         // Get data from JSON
-        $.getJSON("usersList.json", function(data) {
+        $.getJSON("https://www.jasonbase.com/things/x7zZ.json", function(data) {
 
             // calculation variables
             var totalFeatured = data.chinguResourcesArticles.length;

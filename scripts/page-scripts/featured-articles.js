@@ -6,7 +6,7 @@ function RunFeaturedArticles() {
     if(featuredArticles.length == 0) {
 
         // Get data from JSON
-        $.getJSON("usersList.json", function(data) {
+        $.getJSON("https://www.jasonbase.com/things/x7zZ.json", function(data) {
 
             var userObjects = data.featuredArticles.articlesBasedOnTitle;
 
