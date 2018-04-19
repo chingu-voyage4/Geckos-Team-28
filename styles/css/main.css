@@ -353,7 +353,7 @@ template {
 
 header {
   height: 80px;
-  background-color: var(--c_theme_primary); }
+  background-color: var(--c_theme_header); }
   @media only screen and (max-width: 780px) {
     header {
       padding-top: 4rem;

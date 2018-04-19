@@ -1,6 +1,6 @@
 header {
     height: $headerHeight;     
-    background-color: var(--c_theme_primary);
+    background-color: var(--c_theme_header);
     
     @include break(780) {
         padding-top: 4rem;
