@@ -5,6 +5,7 @@ header {
     @include break(780) {
         padding-top: 4rem;
         height: auto;
+        min-height: 30px; // Ensures menu-button is inside header
     }
     .menu {
         display: none;
