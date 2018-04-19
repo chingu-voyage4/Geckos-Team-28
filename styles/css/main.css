@@ -334,10 +334,17 @@ template {
   background-color: var(--c_theme_primary);
   width: 100%;
   min-height: calc(100% - 80px); }
+  @media only screen and (max-width: 780px) {
+    .pages {
+      position: static; } }
   .pages .page {
     display: none;
     margin-top: 30px;
     width: 100%; }
+    @media only screen and (max-width: 780px) {
+      .pages .page {
+        padding: 2rem 0;
+        margin: 0; } }
     .pages .page.selected {
       display: block; }
     .pages .page .container {
@@ -346,15 +353,45 @@ template {
 
 header {
   height: 80px;
+<<<<<<< HEAD
   background-color: var(--c_theme_header); }
+=======
+  background-color: var(--c_theme_primary); }
+  @media only screen and (max-width: 780px) {
+    header {
+      padding-top: 4rem;
+      height: auto; } }
+  header .menu {
+    display: none; }
+    @media only screen and (max-width: 780px) {
+      header .menu {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        padding: 15px;
+        font-size: 1.5rem;
+        color: #eee;
+        display: block; }
+        header .menu:hover {
+          background: rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.4);
+          cursor: pointer; } }
+  @media only screen and (max-width: 780px) {
+    header nav.collapsed {
+      display: none; } }
+  @media only screen and (max-width: 780px) {
+    header nav {
+      animation: slide_in 0.3s ease-in-out 0s; } }
+>>>>>>> hamberger_menu
   header nav ul {
     display: flex;
     margin: 0;
     padding-top: 18px;
     justify-content: center;
     align-items: center; }
-    @media only screen and (max-width: 765px) {
+    @media only screen and (max-width: 780px) {
       header nav ul {
+        flex-direction: column;
         width: 95%;
         margin: auto;
         padding-left: 0; } }
@@ -368,7 +405,7 @@ header {
         font-family: "Roboto", sans-serif;
         font-size: 1.3em;
         transition: all ease .3s; }
-        @media only screen and (max-width: 765px) {
+        @media only screen and (max-width: 780px) {
           header nav ul li a {
             display: block;
             width: 100%;
@@ -377,6 +414,11 @@ header {
           background: rgba(0, 0, 0, 0.1);
           box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.4); }
 
+@keyframes slide_in {
+  0% {
+    transform: translateY(-100%); }
+  100% {
+    transform: translateY(0%); } }
 .settings-page {
   width: 75%;
   margin: auto; }
