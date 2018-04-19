@@ -28,10 +28,10 @@ header {
 
         &.collapsed {
             @include break(780) {
-                display: none;                
+                display: none;                               
             }
         }
-
+        
         @include break(780) {
             @include animate(slide_in, 0.3s, 0s);
         }
