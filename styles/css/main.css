@@ -353,11 +353,12 @@ template {
 
 header {
   height: 80px;
-  background-color: var(--c_theme_primary); }
+  background-color: var(--c_theme_header); }
   @media only screen and (max-width: 780px) {
     header {
       padding-top: 4rem;
-      height: auto; } }
+      height: auto;
+      min-height: 30px; } }
   header .menu {
     display: none; }
     @media only screen and (max-width: 780px) {
@@ -426,6 +427,7 @@ header {
   .settings-page .disable-latest-articles-users ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     padding: 0; }
     @media only screen and (max-width: 765px) {
       .settings-page .disable-latest-articles-users ul {
@@ -440,6 +442,9 @@ header {
       text-align: center;
       border: 1px solid var(--c_theme_button_border);
       background-color: var(--c_theme_button_inner); }
+      @media only screen and (max-width: 1260px) {
+        .settings-page .disable-latest-articles-users ul li {
+          width: 31%; } }
       @media only screen and (max-width: 765px) {
         .settings-page .disable-latest-articles-users ul li {
           width: 90%;
