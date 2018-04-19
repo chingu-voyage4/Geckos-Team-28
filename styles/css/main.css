@@ -353,9 +353,6 @@ template {
 
 header {
   height: 80px;
-<<<<<<< HEAD
-  background-color: var(--c_theme_header); }
-=======
   background-color: var(--c_theme_primary); }
   @media only screen and (max-width: 780px) {
     header {
@@ -382,7 +379,6 @@ header {
   @media only screen and (max-width: 780px) {
     header nav {
       animation: slide_in 0.3s ease-in-out 0s; } }
->>>>>>> hamberger_menu
   header nav ul {
     display: flex;
     margin: 0;
