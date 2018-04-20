@@ -61,10 +61,10 @@ function ListColorThemes() {
             'class': 'c-theme-1',
             'primary-color': '#3FA4B5',
             'font-color': '#FEFEF9',
-            'button-border-color': '#45576d',
+            'button-border-color': '#3A434D',
             'button-inner-color': '#3FA4B5',
-            'button-border-color-active': '#45576d',
-            'button-inner-color-active': '#45576d',
+            'button-border-color-active': '#3A434D',
+            'button-inner-color-active': '#3A434D',
             'button-text-active': '#FEFEF9',
             'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
             'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)',
@@ -111,7 +111,21 @@ function ListColorThemes() {
             'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
             'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)',
             'header-color': '#c3deff'
-        }
+        },
+        {
+            'name': "Bright News",
+            'class': 'c-theme-5',
+            'primary-color': '#f3f3f1',
+            'font-color': '#333333',
+            'button-border-color': '#333333',
+            'button-inner-color': '#f3f3f1',
+            'button-border-color-active': '#65bfcd',
+            'button-inner-color-active': '#65bfcd',
+            'button-text-active': '#FEFEF9',
+            'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
+            'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)',
+            'header-color': '#FEFEF9'
+        },
     ];
 
     // Build HTML (color themes)
