@@ -122,7 +122,7 @@ function ListColorThemes() {
 
     // Load saved color theme (chrome storage)
     chrome.storage.sync.get(['colorTheme'], function(result) {
-        if(result != undefined) {
+        if(result.colorTheme != undefined) {
             ChangeColorTheme(result.colorTheme);
         }
     });
