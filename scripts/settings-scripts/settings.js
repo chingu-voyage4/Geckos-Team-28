@@ -57,10 +57,23 @@ function ListColorThemes() {
     // List of color themes
     var colorThemes = [
         {
-            'name': 'Dark Night (default)',
+            'name': "Green Mango (default)",
             'class': 'c-theme-1',
+            'primary-color': '#3FA4B5',
+            'font-color': '#FEFEF9',
+            'button-border-color': '#3A434D',
+            'button-inner-color': '#3FA4B5',
+            'button-border-color-active': '#3A434D',
+            'button-inner-color-active': '#3A434D',
+            'button-text-active': '#FEFEF9',
+            'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
+            'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)',
+            'header-color': '#2d7d8a'
+        },
+        {
+            'name': 'Dark Night',
+            'class': 'c-theme-2',
             'primary-color': '#394C5F',
-            'secondary-color': '#CFD8DC',
             'font-color': '#CFD8DC',
             'button-border-color': '#CFD8DC',
             'button-inner-color': '#394C5F',
@@ -69,13 +82,12 @@ function ListColorThemes() {
             'button-text-active': '#394C5F',
             'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
             'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)',
-            'header-color': '#394C5F'
+            'header-color': '#323e49'
         },
         {
             'name': 'Dark Blossom',
-            'class': 'c-theme-2',
+            'class': 'c-theme-3',
             'primary-color': '#355c7d',
-            'secondary-color': '#e0b8c3',
             'font-color': '#e0b8c3',
             'button-border-color': '#e0b8c3',
             'button-inner-color': '#355c7d',
@@ -87,10 +99,9 @@ function ListColorThemes() {
             'header-color': '#355c7d'
         },
         {
-            'name': "Blue Alpha",
-            'class': 'c-theme-3',
+            'name': "Light Blue",
+            'class': 'c-theme-4',
             'primary-color': '#90caf9',
-            'secondary-color': '#F8FFAE',
             'font-color': '#263238',
             'button-border-color': '#b91400',
             'button-inner-color': '#90caf9',
@@ -100,7 +111,21 @@ function ListColorThemes() {
             'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
             'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)',
             'header-color': '#c3deff'
-        }
+        },
+        {
+            'name': "Bright News",
+            'class': 'c-theme-5',
+            'primary-color': '#f3f3f1',
+            'font-color': '#333333',
+            'button-border-color': '#333333',
+            'button-inner-color': '#f3f3f1',
+            'button-border-color-active': '#65bfcd',
+            'button-inner-color-active': '#65bfcd',
+            'button-text-active': '#FEFEF9',
+            'shadow-color': '6px 3px 19px -1px rgba(0,0,0, 0.75)',
+            'shadow-color-hover': '6px 3px 19px -1px rgba(0,0,0, 1)',
+            'header-color': '#FEFEF9'
+        },
     ];
 
     // Build HTML (color themes)
@@ -122,7 +147,7 @@ function ListColorThemes() {
 
     // Load saved color theme (chrome storage)
     chrome.storage.sync.get(['colorTheme'], function(result) {
-        if(result != undefined) {
+        if(result.colorTheme != undefined) {
             ChangeColorTheme(result.colorTheme);
         }
     });
@@ -144,7 +169,6 @@ function ListColorThemes() {
         // Change CSS variables
         const body = document.querySelector('body');
         body.style.setProperty('--c_theme_primary', colorTheme["primary-color"]);
-        body.style.setProperty('--c_theme_secondary', colorTheme["secondary-color"]);
         body.style.setProperty('--c_theme_font', colorTheme["font-color"]);
         body.style.setProperty('--c_theme_button_border', colorTheme["button-border-color"]);
         body.style.setProperty('--c_theme_button_inner', colorTheme["button-inner-color"]);

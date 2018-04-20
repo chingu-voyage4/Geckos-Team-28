@@ -1,15 +1,14 @@
 :root {
-  --c_theme_primary: #394c5f;
-  --c_theme_secondary: #CFD8DC;
-  --c_theme_font: #CFD8DC;
-  --c_theme_button_border: #CFD8DC;
-  --c_theme_button_inner: #394c5f;
-  --c_theme_button_border_active: #CFD8DC;
-  --c_theme_button_inner_active: #CFD8DC;
-  --c_theme_button_text_active: #394c5f;
-  --c_theme_shadow: '6px 3px 19px -1px rgba(0,0,0, 0.75)';
-  --c_theme_shadow_hover: '6px 3px 19px -1px rgba(0,0,0, 1)';
-  --c_theme_header: '#394c5f'; }
+  --c_theme_primary: #3FA4B5;
+  --c_theme_font: #FEFEF9;
+  --c_theme_button_border: #45576d;
+  --c_theme_button_inner: #3FA4B5;
+  --c_theme_button_border_active: #45576d;
+  --c_theme_button_inner_active: #45576d;
+  --c_theme_button_text_active: #FEFEF9;
+  --c_theme_shadow: 6px 3px 19px -1px rgba(0,0,0, 0.75);
+  --c_theme_shadow_hover: 6px 3px 19px -1px rgba(0,0,0, 1);
+  --c_theme_header: #2d7d8a; }
 
 a,
 p,
@@ -465,8 +464,8 @@ header {
   .settings-page .color-themes-selector ul {
     display: flex;
     flex-wrap: wrap;
-    max-height: 150px;
     list-style-type: none;
+    justify-content: center;
     padding: 0; }
     .settings-page .color-themes-selector ul li {
       width: 250px;

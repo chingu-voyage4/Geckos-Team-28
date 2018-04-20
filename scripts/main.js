@@ -7,7 +7,14 @@ chrome.storage.sync.get(['latestUsersArray'], function(result) {
     }
     CheckForUpdates();
     ListColorThemes();
-    RunLatestArticles();
+    // Run after timeout, so usersForLatestArticles has time to populate
+    if(usersForLatestArticles.length == 0) {
+        setTimeout(function() {
+            RunLatestArticles();
+        }, 1000);
+    } else {
+        RunLatestArticles();
+    }
 });
 
 // Navigation events
