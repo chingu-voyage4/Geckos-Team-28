@@ -464,8 +464,8 @@ header {
   .settings-page .color-themes-selector ul {
     display: flex;
     flex-wrap: wrap;
-    max-height: 150px;
     list-style-type: none;
+    justify-content: center;
     padding: 0; }
     .settings-page .color-themes-selector ul li {
       width: 250px;
