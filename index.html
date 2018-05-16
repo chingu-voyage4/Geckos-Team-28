@@ -6,15 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./styles/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <title>G28</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Chingu Medium Digest</title>
 </head>
+
 <body>
-    <div class="container">
-        <h2>Hello, this is Team Gecko-28's repository.</h2>
-        <p>Sit back and relax.. while we bring our project to life.</p>
+    <div class="app-container">
+        <header>
+            <!-- Add header content here -->
+            <nav class="main-nav collapsed">
+                <ul>
+                    <li class="navpoint" id="latest-articles-navpoint" data-page-navpoint="latest-articles-page"><a href="#">Latest Articles</a></li>
+                    <li class="navpoint" id="featured-articles-navpoint" data-page-navpoint="featured-article-page"><a href="#">Featured Articles</a></li>
+                    <li class="navpoint" id="chingu-resources-navpoint" data-page-navpoint="chingu-resources-page"><a href="#">Chingu Resources</a></li>
+                    <li class="navpoint" id="settings-navpoint" data-page-navpoint="settings-page"><a href="#">Settings</a></li>
+                </ul>
+            </nav>
+            <!-- hambergur menu -->
+            <span class="menu">Menu</span>
+        </header>
+        <div class="pages">
+            <div class="page latest-articles-page selected">
+                <div class="container">
+                    
+                </div>
+            </div>
+            <div class="page featured-articles-page">
+                <div class="container">
+                    
+                </div>
+            </div>
+            <div class="page chingu-resources-page">
+                <div class="container"></div>
+            </div>
+            <div class="page settings-page">
+                <div class="container">
+                    <h2 class="page-title">Settings</h2>
+                    <div class="disable-latest-articles-users">
+                        <h2>Toggle users</h2>
+                        <ul></ul>
+                    </div>
+                    <div class="color-themes-selector">
+                        <h2>Color Themes</h2>
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-
-
+    <script src="./scripts/jquery-3.3.1.min.js"></script>
+    <script src="./scripts/shared-functions.js"></script>
+    <script src="./scripts/settings-scripts/settings.js"></script>
+    <script src="./scripts/page-scripts/latest-articles.js"></script>
+    <script src="./scripts/page-scripts/featured-articles.js"></script>
+    <script src="./scripts/page-scripts/resources-articles.js"></script>
     <script src="./scripts/main.js"></script>
 </body>
 </html>

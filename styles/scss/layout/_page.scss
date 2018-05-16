@@ -1,0 +1,33 @@
+.pages {
+    position: absolute;
+    top: $headerHeight;
+    left: 0;
+    background: rgba(0,0,0,  0.1);
+    background-color: var(--c_theme_primary);
+    width: 100%;
+    min-height: calc(100% - #{$headerHeight});
+
+    @include break(780) {
+        position: static;
+    }
+
+    .page {
+        display:none;
+        margin-top: 30px;
+        width: 100%;
+        @include break(780) {
+            padding: 2rem 0;
+            margin: 0;
+        }
+        &.selected {
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+    }
+
+}

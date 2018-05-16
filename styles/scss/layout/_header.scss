@@ -1,0 +1,92 @@
+header {
+    height: $headerHeight;     
+    background-color: var(--c_theme_header);
+    
+    @include break(780) {
+        padding-top: 4rem;
+        height: auto;
+        min-height: 30px; // Ensures menu-button is inside header
+    }
+    .menu {
+        display: none;
+        @include break(780) {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            padding: 15px;
+            font-size: 1.5rem;
+            color: #eee;
+            display: block;
+            &:hover {
+                background: rgba(0,0,0, 0.1);
+                box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+            }
+        }
+    }
+
+    nav {   
+
+        &.collapsed {
+            @include break(780) {
+                display: none;                               
+            }
+        }
+        
+        @include break(780) {
+            @include animate(slide_in, 0.3s, 0s);
+        }
+        
+        ul {
+            display: flex;
+            margin: 0;
+            padding-top: 18px;
+            justify-content: center;
+            align-items: center;
+            @include break(780){
+                flex-direction: column;
+                width: 95%;
+                margin: auto;
+                padding-left: 0;
+            }
+
+            li {
+                margin: 10px 20px;
+                list-style-type: none;
+                
+                a {
+                    text-decoration: none;
+                    padding: 14px 20px;
+                    border-radius: 5px;
+                    font-family: $secondary-font;
+                    font-size: 1.3em;
+                    transition: all ease .3s;
+                    @include break(780){
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                    }
+
+                    &:hover {
+                        background: rgba(0,0,0, 0.1);
+                        box-shadow: 0px 2px 13px 4px rgba(255, 255, 255, 0.4);
+                    }
+                    
+                }
+            }
+
+        }
+
+    }
+
+}
+
+@include keyframes(slide_in) {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%)
+    }
+}
+
